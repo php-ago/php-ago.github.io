@@ -5,13 +5,11 @@ import { defaultTheme } from '@vuepress/theme-default'
 import customStyles from './modules/customStyles'
 
 export default defineUserConfig({
-    base: '/ago-docs/',
     lang: 'en-US',
     title: 'Ago',
-    head: [
-        ['style', { type: 'text/css' }, customStyles]
-    ],
-    description: 'Date/time converter into "n time ago" format that supports multiple languages',
+    head: [['style', { type: 'text/css' }, customStyles]],
+    description:
+        'Date/time converter into "n time ago" format that supports multiple languages',
     plugins: [
         searchPlugin({
             locales: {
@@ -19,12 +17,9 @@ export default defineUserConfig({
                     placeholder: 'Search',
                 },
             },
-        })
+        }),
     ],
-    bundler: viteBundler({
-        viteOptions: {},
-        vuePluginOptions: {},
-    }),
+    bundler: viteBundler(),
     theme: defaultTheme({
         navbar: [
             {
@@ -33,11 +28,11 @@ export default defineUserConfig({
             },
             {
                 text: 'GitHub',
-                link: 'https://github.com/SerhiiCho/ago',
+                link: 'https://github.com/php-ago/ago',
             },
             {
                 text: '📃 Changelog',
-                link: 'https://github.com/SerhiiCho/ago/blob/master/CHANGELOG.md',
+                link: 'https://github.com/php-ago/ago/blob/main/CHANGELOG.md',
             },
         ],
     }),

@@ -3,3 +3,4 @@ dist
 .temp
 .cache
 yarn-error.log
+docs/.vuepress/dist
