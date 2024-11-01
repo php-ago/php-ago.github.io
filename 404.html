@@ -1,33 +1,54 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-US">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="VuePress 2.0.0-beta.53">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="generator" content="VuePress 2.0.0-rc.18" />
     <style>
       :root {
-        --c-bg: #fff;
+        --vp-c-bg: #fff;
       }
-      html.dark {
-        --c-bg: #22272e;
+
+      [data-theme='dark'] {
+        --vp-c-bg: #1b1b1f;
       }
-      html, body {
-        background-color: var(--c-bg);
+
+      html,
+      body {
+        background-color: var(--vp-c-bg);
       }
     </style>
     <script>
-      const userMode = localStorage.getItem('vuepress-color-scheme');
-			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
-				document.documentElement.classList.toggle('dark', true);
-			}
+      const userMode = localStorage.getItem('vuepress-color-scheme')
+      const systemDarkMode =
+        'matchMedia' in window
+          ? window.matchMedia('(prefers-color-scheme: dark)').matches
+          : false
+
+      if (userMode === 'light') {
+        document.documentElement.dataset.theme = 'light'
+      } else if (userMode === 'dark' || systemDarkMode) {
+        document.documentElement.dataset.theme = 'dark'
+      }
     </script>
-    <title> | Ago</title><meta name="description" content="Date/time converter into "n time ago" format that supports multiple languages">
-    <link rel="preload" href="/ago-docs/assets/style.a0de0e2e.css" as="style" /><link rel="stylesheet" href="/ago-docs/assets/style.a0de0e2e.css" />
-    <link rel="modulepreload" href="/ago-docs/assets/app.7c630d6b.js"><link rel="modulepreload" href="/ago-docs/assets/404.html.d05ca4de.js"><link rel="modulepreload" href="/ago-docs/assets/404.html.d2dc3323.js"><link rel="prefetch" href="/ago-docs/assets/index.html.80c87511.js" as="script" /><link rel="prefetch" href="/ago-docs/assets/index.html.162ccf3e.js" as="script" />
+    <style type="text/css">
+    a.route-link-active {
+        margin-bottom: -2px;
+        border-bottom: 2px solid var(--c-text-accent);
+    }
+
+    /* todo: remove this after bug is fixed in vuepress */
+    .navbar-items-wrapper a.route-link {
+        margin-bottom: -2px;
+        border-bottom: 2px solid var(--c-text-accent);
+    }
+</style><title>Ago</title><meta name="description" content="Date/time converter into "n time ago" format that supports multiple languages">
+    <link rel="preload" href="/assets/style-DHfOU7E6.css" as="style"><link rel="stylesheet" href="/assets/style-DHfOU7E6.css">
+    <link rel="modulepreload" href="/assets/app-UkbCdMCf.js"><link rel="modulepreload" href="/assets/404.html-HA43mYcv.js">
+    <link rel="prefetch" href="/assets/index.html-nPeEe8pX.js" as="script"><link rel="prefetch" href="/assets/setupDevtools-7MC2TMWH-CO9k7WmH.js" as="script">
   </head>
   <body>
-    <div id="app"><!--[--><div class="theme-container"><main class="page"><div class="theme-default-content"><h1>404</h1><blockquote>Looks like we&#39;ve got some broken links.</blockquote><a href="/ago-docs/" class="">Take me home</a></div></main></div><!----><!--]--></div>
-    <script type="module" src="/ago-docs/assets/app.7c630d6b.js" defer></script>
+    <div id="app"><!--[--><div class="vp-theme-container" vp-container data-v-67c08c1d><main class="page" data-v-67c08c1d><div class="theme-default-content" vp-content data-v-67c08c1d><h1 data-v-67c08c1d>404</h1><blockquote data-v-67c08c1d>Looks like we&#39;ve got some broken links.</blockquote><a class="route-link" href="/" data-v-67c08c1d>Take me home</a></div></main></div><!--[--><!----><!--]--><!--]--></div>
+    <script type="module" src="/assets/app-UkbCdMCf.js" defer></script>
   </body>
 </html>
