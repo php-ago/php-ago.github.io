@@ -21,6 +21,7 @@ export default defineConfig({
         sidebar: [
             { text: 'Documentation', link: '/' },
             { text: 'Configurations', link: '/configurations' },
+            { text: 'Options', link: '/options' },
             { text: 'Contribute', link: '/contribute' },
         ],
 
