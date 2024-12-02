@@ -26,6 +26,7 @@ Ago tries to support as many PHP versions as possible. Here is the list of suppo
 - ✅ 8.1
 - ✅ 8.2
 - ✅ 8.3
+- ✅ 8.4
 
 ## Supported languages
 | Flag | Language  | Code [(ISO 639-1)](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) |
