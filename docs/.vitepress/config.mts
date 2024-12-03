@@ -1,51 +1,87 @@
-import { defineConfig } from 'vitepress'
+import defineVersionedConfig from 'vitepress-versioning-plugin'
 
-export default defineConfig({
-    lang: 'en-US',
-    title: 'Ago',
-    description:
-        'Date/time converter into "n time ago" format that supports multiple languages',
+export default defineVersionedConfig(
+    {
+        lang: 'en-US',
+        title: 'Ago',
+        description:
+            'Date/time converter into "n time ago" format that supports multiple languages',
 
-    sitemap: {
-        hostname: 'https://php-ago.github.io',
-    },
-
-    themeConfig: {
-        footer: {
-            message:
-                'Released under the <a href="https://github.com/php-ago/ago/blob/main/LICENSE.md" target="_blank">MIT License</a>',
-            copyright:
-                'Copyright © 2019 - present <a href="https://serhii.io/about-me" target="_blank">Serhii Chornenkyi (Serhii Cho)</a>',
+        versioning: {
+            latestVersion: 'v4',
         },
 
-        sidebar: [
-            { text: 'Documentation', link: '/' },
-            { text: 'Configurations', link: '/configurations' },
-            { text: 'Options', link: '/options' },
-            { text: 'Contribute', link: '/contribute' },
-        ],
+        lastUpdated: true,
 
-        search: {
-            provider: 'local',
+        sitemap: {
+            hostname: 'https://php-ago.github.io',
+
+            // exclude old version pages from sitemap
+            transformItems: items => {
+                return items.filter(
+                    item =>
+                        !item.url.startsWith('v3/') &&
+                        !item.url.startsWith('v2/') &&
+                        !item.url.startsWith('v1/'),
+                )
+            },
         },
 
-        nav: [
-            {
-                text: 'Documentation',
-                link: '/',
+        themeConfig: {
+            versionSwitcher: false,
+            footer: {
+                message:
+                    'Released under the <a href="https://github.com/php-ago/ago/blob/main/LICENSE.md" target="_blank">MIT License</a>',
+                copyright:
+                    'Copyright © 2019 - present <a href="https://serhii.io/about-me" target="_blank">Serhii Chornenkyi (Serhii Cho)</a>',
             },
-            {
-                text: 'Release Notes',
-                link: 'https://github.com/php-ago/ago/blob/main/CHANGELOG.md',
-            },
-        ],
 
-        socialLinks: [
-            {
-                icon: 'github',
-                ariaLabel: 'GitHub',
-                link: 'https://github.com/php-ago/ago',
+            sidebar: {
+                '/v3/': [
+                    { text: 'Get Started', link: '/v3/' },
+                    { text: 'Configurations', link: '/v3/configurations' },
+                    { text: 'Options', link: '/v3/options' },
+                    { text: 'Contribute', link: '/v3/contribute' },
+                ],
+                '/v4/': [
+                    { text: 'Get Started', link: '/v4/' },
+                    { text: 'Configurations', link: '/v4/configurations' },
+                    { text: 'Options', link: '/v4/options' },
+                    { text: 'Contribute', link: '/v4/contribute' },
+                ],
             },
-        ],
+
+            search: {
+                provider: 'local',
+            },
+
+            nav: [
+                {
+                    component: 'VersionSwitcher',
+                    props: {
+                        versions: ['v4', 'v3'],
+                        latestVersion: 'v4',
+                    },
+                },
+                {
+                    text: 'Documentation',
+                    link: '/v4/',
+                },
+                {
+                    text: 'Release Notes',
+                    link: 'https://github.com/php-ago/ago/blob/main/CHANGELOG.md',
+                },
+            ],
+
+            socialLinks: [
+                {
+                    icon: 'github',
+                    ariaLabel: 'GitHub',
+                    link: 'https://github.com/php-ago/ago',
+                },
+            ],
+        },
     },
-})
+    // @ts-ignore
+    __dirname,
+)

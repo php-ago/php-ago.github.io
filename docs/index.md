@@ -1,67 +1,41 @@
 ---
-outline: deep
-title: Documentation
+layout: home
+
+hero:
+  name: "Ago"
+  text: "Fast and lightweight"
+  tagline: Date and time library for your PHP project that converts dates into 'time ago' format.
+  actions:
+    - theme: brand
+      text: Get Started →
+      link: /v4/
+    - theme: alt
+      text: What is Ago?
+      link: /v4/what-is-ago
+
+features:
+  - title: Flexible Date and Time Parsing
+    details: Ago has a flexible date parsing and can parse several different date formats, such as UNIX timestamp, date string like "YYYY-MM-DD HH:MM:SS" and Go's "time.Time" struct
+    icon: 🧩
+  - title: Support for Multiple Languages
+    details: 🇬🇧 🇷🇺 🇺🇦 🇳🇱 🇩🇪 🇨🇳 🇧🇾 🇪🇸 🇯🇵 🇫🇷<br>You can output date in several different languages such as English, Russian, Chinese, Ukrainian, Dutch, German and you can easily contribute your own language
+    icon: 🌍
+  - title: Configurable Options to Suit Diverse Use Cases
+    details: You can configure Ago to suit your needs to the point where you can even modify the output format of the date, override translation sets and more
+    icon: ⚙️
+  - title: Comprehensive Testing for Reliability
+    details: You cannot find datetime library that is tested better than this one. It connected to several code quality analyzers and has tests for each supported language
+    icon: 🧪
+  - title: Compact Codebase for a Minimal Footprint
+    details: Ago is designed to be as lightweight as possible, so you can use it in your project without worrying about the size of the binary
+    icon: 📦
+  - title: Easy Contribution of the New Language Support
+    details: Ago is designed to be as flexible as possible, so you can easily contribute your own language support to the project following our detailed guidelines
+    icon: ✍️
+  - title: Thorough Documentation for Ease of Use
+    details: Ago has a detailed documentation that covers all the features of the library including older versions, so you can easily integrate Ago it into your project
+    icon: 📖
+  - title: Detailed Changelog for All Updates and Features
+    details: Ago has a detailed changelog that covers all the updates and features of the library, so you can easily track the changes and updates
+    icon: 📝
 ---
-
-# Documentation
-Date/time converter into "n time ago" format that supports multiple languages. You can [contribute](/contribute) any language that you wish easily by creating a pull request. I would gladly merge it in if you follow the simple steps.
-
-This package is well tested, optimized and already used in many production apps. It has shown itself pretty well. If you find any issues or bugs 🐞, please create an [issue](https://github.com/php-ago/ago/issues/new), and I'll fix it as soon as I can.
-
-
-## Quick Start
-For using this package, you need to install it via [composer](https://getcomposer.org/) package manager.
-```bash
-composer require serhii/ago
-```
-
-## Supported PHP versions
-Ago tries to support as many PHP versions as possible. Here is the list of supported PHP versions:
-
-- ✅ 7.1
-- ✅ 7.2
-- ✅ 7.3
-- ✅ 7.4
-- ✅ 8.0
-- ✅ 8.1
-- ✅ 8.2
-- ✅ 8.3
-- ✅ 8.4
-
-## Supported languages
-| Flag | Language  | Code [(ISO 639-1)](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) |
-| ---- | --------- | -------------------------------------------------------------------------------- |
-| 🇬🇧    | English   | en                                                                               |
-| 🇷🇺    | Russian   | ru                                                                               |
-| 🇺🇦    | Ukrainian | uk                                                                               |
-| 🇳🇱    | Dutch     | nl                                                                               |
-| 🇩🇪    | German    | de                                                                               |
-
-:::tip Keep updated
-Make sure to update the package to the latest version to get the latest languages support.
-:::
-
-## Usage
-For outputting post publishing date or something else you can just pass the date to method `trans()`. It will count the interval between now and given date and returns needed format. The methods excepts a timestamp, date string, Carbon instance or DateTime.
-
-```php
-use Serhii\Ago\TimeAgo;
-
-TimeAgo::trans('now - 10 seconds'); // output: 10 seconds ago
-TimeAgo::trans(time() - 86400); // output: 1 day ago
-TimeAgo::trans(\Carbon\Carbon::now()->subDay()); // output: 1 day ago
-TimeAgo::trans(\Carbon\CarbonImmutable::now()->subDay()); // output: 1 day ago
-TimeAgo::trans((new \DateTime('now - 5 minutes'))); // output: 5 minutes ago
-TimeAgo::trans((new \DateTimeImmutable('now - 5 minutes'))); // output: 5 minutes ago
-```
-
-When you pass the date in the future, it will output the interval to this date. It's very convenient, because you can pass almost any date format and it will give you the correct output.
-
-```php
-TimeAgo::trans(time() + 86400); // output: 1 day
-TimeAgo::trans('now + 10 minutes'); // output: 10 minutes
-```
-
-:::warning Version 2.2.0
-If you use version less than `2.2.0`, `TimeAgo::trans()` method will except only a string type.
-:::
