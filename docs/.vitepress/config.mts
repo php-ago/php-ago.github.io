@@ -26,7 +26,7 @@ export default defineVersionedConfig(
             versionSwitcher: false,
             footer: {
                 message:
-                    'Released under the <a href="https://github.com/php-ago/ago/blob/main/LICENSE.md" target="_blank">MIT License</a>',
+                    'Released under the <a href="https://github.com/php-ago/ago/blob/main/LICENSE" target="_blank">MIT License</a>',
                 copyright:
                     'Copyright © 2019 - present <a href="https://serhii.io/about-me" target="_blank">Serhii Chornenkyi (Serhii Cho)</a>',
             },
