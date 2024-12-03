@@ -16,26 +16,21 @@ composer require serhii/ago
 ```
 
 ## Supported PHP versions
-Ago tries to support as many PHP versions as possible. Here is the list of supported PHP versions:
+Here is the list of supported PHP versions that are tested and working well with this package.
 
-- ✅ 7.1
-- ✅ 7.2
-- ✅ 7.3
-- ✅ 7.4
-- ✅ 8.0
-- ✅ 8.1
-- ✅ 8.2
-- ✅ 8.3
-- ✅ 8.4
+- [8.1](https://www.php.net/releases/8.1/en.php)
+- [8.2](https://www.php.net/releases/8.2/en.php)
+- [8.3](https://www.php.net/releases/8.3/en.php)
+- [8.4](https://www.php.net/releases/8.4/en.php)
 
 ## Supported languages
-| Flag | Language  | Code [(ISO 639-1)](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) |
-| ---- | --------- | -------------------------------------------------------------------------------- |
-| 🇬🇧    | English   | en                                                                               |
-| 🇷🇺    | Russian   | ru                                                                               |
-| 🇺🇦    | Ukrainian | uk                                                                               |
-| 🇳🇱    | Dutch     | nl                                                                               |
-| 🇩🇪    | German    | de                                                                               |
+| Flag | Language  | String | Enum         |
+| ---- | --------- | ------ | ------------ |
+| 🇬🇧    | English   | `"en"` | `Locale::EN` |
+| 🇷🇺    | Russian   | `"ru"` | `Locale::RU` |
+| 🇺🇦    | Ukrainian | `"uk"` | `Locale::UK` |
+| 🇳🇱    | Dutch     | `"nl"` | `Locale::NL` |
+| 🇩🇪    | German    | `"de"` | `Locale::DE` |
 
 :::tip Keep updated
 Make sure to update the package to the latest version to get the latest languages support.

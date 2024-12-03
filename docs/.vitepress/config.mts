@@ -33,16 +33,32 @@ export default defineVersionedConfig(
 
             sidebar: {
                 '/v3/': [
-                    { text: 'Get Started', link: '/v3/' },
-                    { text: 'Configurations', link: '/v3/configurations' },
-                    { text: 'Options', link: '/v3/options' },
-                    { text: 'Contribute', link: '/v3/contribute' },
+                    {
+                        text: 'Guide',
+                        items: [
+                            { text: 'Get Started', link: '/v3/' },
+                            { text: 'Configurations', link: '/v3/configurations' },
+                            { text: 'Options', link: '/v3/options' },
+                        ],
+                    },
+                    {
+                        text: 'Information',
+                        items: [{ text: 'Contribute', link: '/v3/contribute' }],
+                    },
                 ],
                 '/v4/': [
-                    { text: 'Get Started', link: '/v4/' },
-                    { text: 'Configurations', link: '/v4/configurations' },
-                    { text: 'Options', link: '/v4/options' },
-                    { text: 'Contribute', link: '/v4/contribute' },
+                    {
+                        text: 'Guide',
+                        items: [
+                            { text: 'Get Started', link: '/v4/' },
+                            { text: 'Configurations', link: '/v4/configurations' },
+                            { text: 'Options', link: '/v4/options' },
+                        ],
+                    },
+                    {
+                        text: 'Information',
+                        items: [{ text: 'Contribute', link: '/v4/contribute' }],
+                    },
                 ],
             },
 

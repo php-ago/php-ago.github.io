@@ -2,13 +2,16 @@
 layout: home
 
 hero:
-  name: "Ago"
-  text: "Fast and Flexible"
+  name: Ago
+  text: Fast and Flexible
   tagline: Date and time library for your PHP project that converts dates into 'time ago' format.
   actions:
     - theme: brand
       text: Get Started →
       link: /v4/
+    - theme: alt
+      text: GitHub
+      link: https://github.com/php-ago/ago
 
 features:
   - title: Flexible Date and Time Parsing
