@@ -1,9 +1,13 @@
 :root {
     --vp-c-brand-1: #54799c !important;
     --vp-c-brand-2: #4c7193 !important;
+    --vp-button-brand-bg: #54799c !important;
+    --vp-button-brand-hover-bg: #45698b !important;
 }
 
 .dark {
     --vp-c-brand-1: #7ca6cd !important;
     --vp-c-brand-2: #7ea6cb !important;
+    --vp-button-brand-bg: #335f88 !important;
+    --vp-button-brand-hover-bg: #295279 !important;
 }

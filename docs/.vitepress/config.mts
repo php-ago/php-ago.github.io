@@ -18,12 +18,7 @@ export default defineVersionedConfig(
 
             // exclude old version pages from sitemap
             transformItems: items => {
-                return items.filter(
-                    item =>
-                        !item.url.startsWith('v3/') &&
-                        !item.url.startsWith('v2/') &&
-                        !item.url.startsWith('v1/'),
-                )
+                return items.filter(item => !item.url.startsWith('v3/'))
             },
         },
 
