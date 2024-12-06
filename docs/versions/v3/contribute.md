@@ -14,7 +14,7 @@ If you want to contribute support for a language that is fully supported, all yo
 ## How to make a PR
 Before you start working on issue, add a comment to it, so that other folks know that someone is already working on it.
 
-When you make a pull request, make sure that you don't pull it in the master branch. Pull it in the next package version. The name of the package version (Realease) matches the name of the branch. You can go to the [branches](https://github.com/php-ago/ago/branches) page, and see what is the latest branch that is not merged, that branch is going to be the next package update.
+When you make a pull request, make sure that you don't pull it in the master branch. Pull it in the next library version. The name of the library version (Release) matches the name of the branch. You can go to the [branches](https://github.com/php-ago/ago/branches) page, and see what is the latest branch that is not merged, that branch is going to be the next library update.
 
 ## 1 Step. Adding translation
 Translation files live in `resources/trans` directory. Here is the example of the language file for Russian language.

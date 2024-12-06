@@ -11,11 +11,12 @@ You are viewing the outdated version of Ago library. [Switch to the latest versi
 # Get Started
 Date/time converter into "n time ago" format that supports multiple languages. You can [contribute](/contribute) any language that you wish easily by creating a pull request. I would gladly merge it in if you follow the simple steps.
 
-This package is well tested, optimized and already used in many production apps. It has shown itself pretty well. If you find any issues or bugs 🐞, please create an [issue](https://github.com/php-ago/ago/issues/new), and I'll fix it as soon as I can.
+This library is well tested, optimized and already used in many production apps. It has shown itself pretty well. If you find any issues or bugs 🐞, please create an [issue](https://github.com/php-ago/ago/issues/new), and I'll fix it as soon as I can.
 
 
 ## Quick Start
-For using this package, you need to install it via [composer](https://getcomposer.org/) package manager.
+To use Ago, first, you need to install it via [Composer](https://getcomposer.org/) package manager and have minimum PHP version `7.1`.
+
 ```bash
 composer require serhii/ago:3.2.6
 ```
@@ -43,7 +44,7 @@ Ago tries to support as many PHP versions as possible. Here is the list of suppo
 | 🇩🇪    | German    | de                                                                               |
 
 :::tip Keep updated
-Make sure to update the package to the latest version to get the latest languages support.
+Make sure to update the library to the latest version to get the latest languages support.
 :::
 
 ## Usage

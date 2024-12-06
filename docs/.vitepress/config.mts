@@ -51,13 +51,17 @@ export default defineVersionedConfig(
                         text: 'Guide',
                         items: [
                             { text: 'Get Started', link: '/v4/' },
+                            { text: 'Usage Guide', link: '/v4/usage-guide' },
                             { text: 'Configurations', link: '/v4/configurations' },
                             { text: 'Options', link: '/v4/options' },
                         ],
                     },
                     {
                         text: 'Information',
-                        items: [{ text: 'Contribute', link: '/v4/contribute' }],
+                        items: [
+                            { text: 'What is Ago?', link: '/v4/what-is-ago' },
+                            { text: 'Contribute', link: '/v4/contribute' },
+                        ],
                     },
                 ],
             },
