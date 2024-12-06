@@ -4,7 +4,6 @@ title: Get Started - v4
 ---
 
 # Get Started
-
 Easily convert dates and times into a user-friendly "n time ago" format with support for multiple languages. Whether it's `1 hour ago`, `2 days ago`, or `Just now`, this library makes it simple to provide localized, human-readable date formatting.
 
 :::tip Read More

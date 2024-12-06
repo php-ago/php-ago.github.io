@@ -4,6 +4,9 @@ title: What is Ago - v4
 ---
 
 # What is Ago?
+**Ago** is a Zero-Dependency PHP library that provides a simple and intuitive way to format dates and times into a human-readable "n time ago" format. Whether it's `1 hour ago`, `2 days ago`, or `Just now`, this library makes it simple to provide localized, human-readable date formatting.
+
+You can read our [Usage Guide](/v4/usage-guide) to learn how to use **Ago** in your projects.
 
 ## Why Choose This Library?
 You might be wondering why you should use this library over others. Here are a few reasons why it stands out:
