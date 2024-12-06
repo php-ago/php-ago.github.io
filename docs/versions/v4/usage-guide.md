@@ -14,7 +14,8 @@ As the first argument, the `trans(date, ...options)` method accepts the followin
 | Type     | Description | Example |
 | -------- | ----------- | ------- |
 | `int`    | Unix timestamp that can be returned from the `time()` or `strtotime()` functions | `1733493575` |
-| `string` | Any date string supported | |
+| `string` | Any date string supported by the PHP's `DateTime` constructor. Refer to [DateTime](https://www.php.net/manual/en/class.datetime.php) docs to learn about string formats | `2024-12-06 12:00:00` |
+| `DateTime` | An instance of the `DateTime`, `DateTimeImmutable` or any other class that follows PHP's [DateTimeInterface](https://www.php.net/manual/en/class.datetimeinterface.php). It could an instance of external libraries like `Carbon` from `nesbot/carbon` package, since it also follows the `DateTimeInterface` | `new DateTime('now')` |
 
 ## Example
 ```php
