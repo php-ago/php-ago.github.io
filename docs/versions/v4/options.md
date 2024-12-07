@@ -4,16 +4,27 @@ title: Options - v4
 ---
 
 # Options
-As the seconds argument `trans` method excepts array of options or single option. Here is an example of passed options.
+The `trans` method is [variadic](https://en.wikipedia.org/wiki/Variadic_function) and accepts multiple options. You can pass them as a list of arguments separated by commas.
+
+```php
+use Serhii\Ago\TimeAgo;
+use Serhii\Ago\Option;
+
+$output = TimeAgo::trans('now - 30 seconds', Option::ONLINE);
+
+echo $output; // "Online"
+```
+
+Here are more examples with different options:
 
 ```php
 use Serhii\Ago\Option;
 use Serhii\Ago\TimeAgo;
 
-TimeAgo::trans('yesterday'); // 1 day ago
-TimeAgo::trans('yesterday', Option::NO_SUFFIX); // 1 day
-TimeAgo::trans(time(), Option::ONLINE); // Online
-TimeAgo::trans(time(), Option::JUST_NOW); // Just now
+echo TimeAgo::trans('yesterday'); // "1 day ago"
+echo TimeAgo::trans('yesterday', Option::NO_SUFFIX); // "1 day"
+echo TimeAgo::trans(time(), Option::ONLINE); // "Online"
+echo TimeAgo::trans(time(), Option::JUST_NOW); // "Just now"
 ```
 
 ## Available options
