@@ -1,6 +1,7 @@
 ---
 outline: deep
 title: Usage Guide - v4
+description: Learn how to use Ago library in your application
 ---
 
 # Usage Guide

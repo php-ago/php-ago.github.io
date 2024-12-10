@@ -1,6 +1,7 @@
 ---
 outline: deep
 title: Configurations - v4
+description: Learn how to configure Ago library in your application
 ---
 
 # Configurations

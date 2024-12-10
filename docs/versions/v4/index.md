@@ -1,6 +1,7 @@
 ---
 outline: deep
 title: Get Started - v4
+description: Learn how to install Ago library and get started with it
 ---
 
 # Get Started

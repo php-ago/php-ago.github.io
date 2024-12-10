@@ -1,6 +1,7 @@
 ---
 outline: deep
 title: What is Ago - v4
+description: Learn what Ago library is and how it can help you format dates and times into a human-readable format
 ---
 
 # What is Ago?

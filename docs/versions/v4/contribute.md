@@ -1,6 +1,7 @@
 ---
 outline: deep
 title: Contribute - v4
+description: Learn how to contribute to Ago library by adding support for a new language
 ---
 
 # Contribute

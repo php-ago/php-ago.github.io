@@ -1,6 +1,7 @@
 ---
 outline: deep
 title: Options - v4
+description: Learn how to use options in Ago library
 ---
 
 # Options
