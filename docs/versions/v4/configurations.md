@@ -34,9 +34,16 @@ TimeAgo::configure($config);
 | [overwrites](/v4/configurations.html#ovewrite-translations) | `array<int,LangSet>` | `[]` | Custom translations for the language |
 
 ## Change Language
-Default language is English. Optionally you can change the language in your application by passing one of the values on `Serhii\Ago\Lang` static class.
+Default language is English. Optionally you can change the language in your application by passing one of the values on `Serhii\Ago\Lang` static class. There are 2 ways of doing that. Using `TimeAgo::configure` and `Lang::set`.
 
-```php
+::: code-group
+```php [Lang::set]
+use Serhii\Ago\Lang;
+
+Lang::set(Lang::EN);
+```
+
+```php [TimeAgo::configure]
 use Serhii\Ago\TimeAgo;
 use Serhii\Ago\Config;
 use Serhii\Ago\Lang;
@@ -45,23 +52,33 @@ $config = new Config(lang: Lang::RU);
 
 TimeAgo::configure($config);
 ```
+:::
 
+:::tip Supported Languages
 The list of all supported languages you can find in [Supported Languages](/v4/what-is-ago.html#supported-languages) section.
+:::
 
 ## Override Translations
-There are cases when you want to replace certain words with specific ones. You can do it with "Overwrites". All you need to do is just to pass an array of `Serhii\Ago\LangOverwrite` objects to the `overwrites` parameter of the `Serhii\Ago\Config` class.
+There are cases when you want to replace certain translations with your own ones. For example, instead of `1 minute ago` you want to have the output `1m` or `1 min ago`. You can do it with "Overwrites". All you need to do is just to define everything you want to overwrite for a specific language.
 
-```php
+Pass an array of overwrites to the configurations. Let's see how we can change the `Online` to `Live` in English language.
+
+```php [TimeAgo::configure]
+use Serhii\Ago\TimeAgo;
+use Serhii\Ago\Config;
+use Serhii\Ago\Lang;
+
+$config = new Config(overwrites: [
+    new LangOverwrite(
+        lang: Lang::EN,
+        online: 'Live',
+    ),
+]);
+
+TimeAgo::configure($config);
+```
 
 For example, instead of `1 minute ago` you want to have the output `1 minute before`. To achieve that, create `['ago' => 'before']` array and pass it as the second argument to method `set()` in `Serhii\Ago\Lang` class.
-
-```php
-Lang::set('en', [
-    'ago' => 'before',
-    'day' => 'Day',
-    'days' => 'Days',
-]);
-```
 
 ## TODO
 The new `Serhii\Ago\LangForm` should be used for `day`, `hour`, `minute`, `second`, `week`, `month`, `year` translations. It allows you to have more flexibility in the translations and make them more accurate.

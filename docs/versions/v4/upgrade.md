@@ -108,21 +108,23 @@ return [
 
 The structure is uses [CLDR Specifications](https://cldr.unicode.org/index/cldr-spec/plural-rules) for the pluralization of the words. This allows you to have more flexibility in the translations and make them more accurate.
 
-So if you use overwrites in you app, you need to update them to the new structure.
+So if you use overwrites in you app, you need to update them to the new structure and move them to `TimeAgo::configure`.
 
 ::: code-group
 ```php [New way]
+use Serhii\Ago\TimeAgo;
+use Serhii\Ago\Config;
 use Serhii\Ago\Lang;
-use Serhii\Ago\LangForm;
-use Serhii\Ago\LangOverwrite;
 
-Lang::set(Lang::EN, overwrites: [
+$config = new Config(overwrites: [
     new LangOverwrite(
-        lang: Lang::EN,
+        lang: Lang::EN, // Which language to overwrite
         ago: 'before',
         day: new LangForm(one: 'Day', other: 'Days'),
     ),
 ]);
+
+TimeAgo::configure($config);
 ```
 
 ```php [Old way]
