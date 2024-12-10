@@ -5,7 +5,25 @@ description: Learn how to configure Ago library in your application
 ---
 
 # Configurations
-To make any configurations to the Ago, you need to pass the instance of `Serhii\Ago\Config` class to the `configure()` method of `Serhii\Ago\TimeAgo`. Optionally, you can also change some configurations with the help of `Serhii\Ago\Lang` class that you will see later in the [Change Language](/v4/configurations.html#change-language) section.
+You can update the library configuration using the `TimeAgo::configure` or `TimeAgo::reconfigure` method, both of which accept a `Config` class. These methods can be called anywhere in your codebase, as long as they are called before the `TimeAgo::trans` method. If not, the library will fall back to the default configuration.
+
+## Configuration Options
+
+### `configure`
+The `TimeAgo::configure` method lets you update specific settings without altering the rest of the configuration. It merges the new settings with the existing ones, ensuring that previously configured values are preserved. This is ideal for incremental updates when you only need to adjust certain parameters.
+
+### `reconfigure`
+Use the `TimeAgo::reconfigure` method to completely replace the current configuration. This function resets all settings to their default values before applying the new configuration, ensuring a clean slate for your updates.
+
+## Available Configurations
+
+| Parameter | Type | Default | Description |
+| --- | --- | --- | --- |
+| [lang](/v4/configurations.html#change-language) | `Lang` | `"en"` | [Language](/v4/what-is-ago.html#supported-languages) of the output |
+| [overwrites](/v4/configurations.html#ovewrite-translations) | `array<int,LangSet>` | `[]` | Custom translations for the language |
+
+## Example of Usage
+Let's take a look at the most simple example of how you can configure the library. Let's say we want to set current language to Russian and overwrite the `В сети` translation to `Онлайн`, which are both mean `Online` in English.
 
 ```php
 use Serhii\Ago\TimeAgo;
@@ -15,7 +33,7 @@ use Serhii\Ago\LangOverwrite;
 
 $config = new Config(
     lang: Lang::RU,
-    customTranslations: [
+    overwrites: [
         new LangOverwrite([
             lang: Lang::RU,
             online: 'Онлайн',
@@ -23,15 +41,8 @@ $config = new Config(
     ],
 );
 
-TimeAgo::configure($config);
+TimeAgo::reconfigure($config);
 ```
-
-## Available Configurations
-
-| Parameter | Type | Default | Description |
-| --- | --- | --- | --- |
-| [lang](/v4/configurations.html#change-language) | `Lang` | `"en"` | [Language](/v4/what-is-ago.html#supported-languages) of the output |
-| [overwrites](/v4/configurations.html#ovewrite-translations) | `array<int,LangSet>` | `[]` | Custom translations for the language |
 
 ## Change Language
 Default language is English. Optionally you can change the language in your application by passing one of the values on `Serhii\Ago\Lang` static class. There are 2 ways of doing that. Using `TimeAgo::configure` and `Lang::set`.
