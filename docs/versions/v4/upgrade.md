@@ -24,43 +24,12 @@ The first step is updating the `composer.json` file to use the latest version of
 }
 ```
 
-## Step 2: Change the Overrides <Badge type="warning" text="possible" />
-If you are using custom translations (overwrites, overrides) to overwrite the default translations, you need to change the way you pass them. In `v4` we've changed the translation files structure to be more flexible and easier to use.
+## Step 2: Change the Overwrites <Badge type="warning" text="possible" />
+If you are using custom translations (overwrites) to overwrite the default translations, you need to change the way you pass them. In `v4` we've changed the translation files structure to be more flexible and easier to use.
 
 For example, take a look at the differences in structure for the Russian language:
 
 ::: code-group
-```php [Old structure]
-return [
-
-    'ago' => 'назад',
-    'just_now' => 'Только что',
-    'online' => 'В сети',
-    'second' => 'секунда',
-    'seconds' => 'секунды',
-    'seconds-special' => 'секунд',
-    'minute' => 'минута',
-    'minutes' => 'минуты',
-    'minutes-special' => 'минут',
-    'hour' => 'час',
-    'hours' => 'часа',
-    'hours-special' => 'часов',
-    'day' => 'день',
-    'days' => 'дня',
-    'days-special' => 'дней',
-    'week' => 'неделя',
-    'weeks' => 'недели',
-    'weeks-special' => 'недель',
-    'month' => 'месяц',
-    'months' => 'месяца',
-    'months-special' => 'месяцев',
-    'year' => 'год',
-    'years' => 'года',
-    'years-special' => 'лет',
-
-];
-```
-
 ```php [New structure]
 return [
     "lang" => "ru",
@@ -105,7 +74,35 @@ return [
         "other" => "лет",
     ],
 ];
+```
 
+```php [Old structure]
+return [
+    'ago' => 'назад',
+    'just_now' => 'Только что',
+    'online' => 'В сети',
+    'second' => 'секунда',
+    'seconds' => 'секунды',
+    'seconds-special' => 'секунд',
+    'minute' => 'минута',
+    'minutes' => 'минуты',
+    'minutes-special' => 'минут',
+    'hour' => 'час',
+    'hours' => 'часа',
+    'hours-special' => 'часов',
+    'day' => 'день',
+    'days' => 'дня',
+    'days-special' => 'дней',
+    'week' => 'неделя',
+    'weeks' => 'недели',
+    'weeks-special' => 'недель',
+    'month' => 'месяц',
+    'months' => 'месяца',
+    'months-special' => 'месяцев',
+    'year' => 'год',
+    'years' => 'года',
+    'years-special' => 'лет',
+];
 ```
 :::
 
@@ -114,6 +111,20 @@ The structure is uses [CLDR Specifications](https://cldr.unicode.org/index/cldr-
 So if you use overwrites in you app, you need to update them to the new structure.
 
 ::: code-group
+```php [New way]
+use Serhii\Ago\Lang;
+use Serhii\Ago\LangForm;
+use Serhii\Ago\LangOverwrite;
+
+Lang::set(Lang::EN, overwrites: [
+    new LangOverwrite(
+        lang: Lang::EN,
+        ago: 'before',
+        day: new LangForm(one: 'Day', other: 'Days'),
+    ),
+]);
+```
+
 ```php [Old way]
 use Serhii\Ago\Lang;
 
@@ -123,39 +134,6 @@ Lang::set('en', [
     'days' => 'Days',
 ]);
 ```
-
-```php [New way]
-use Serhii\Ago\Lang;
-
-Lang::set('en', [
-    'ago' => 'before',
-    'day' => 'Day',
-    'days' => 'Days',
-]);
-```
 :::
 
-## Step 3: Rename Named Argument <Badge type="warning" text="possible" />
-I doubt that you are using named argument for the `Serhii\Ago\Trans::set($lang, $overwrites)` method, but if you do, you need to rename the second argument from `$overwrites` to `$overrides`.
-
-::: code-group
-```php{3} [Old way]
-use Serhii\Ago\Lang;
-
-Lang::set(lang: 'en', overwrites: [
-    'ago' => 'before',
-    'day' => 'Day',
-    'days' => 'Days',
-]);
-```
-
-```php{3} [New way]
-use Serhii\Ago\Lang;
-
-Lang::set(lang: 'en', overrides: [
-    'ago' => 'before',
-    'day' => 'Day',
-    'days' => 'Days',
-]);
-```
-:::
+For the full tutorial on how to use the new structure, check the [Overwrite Translations](/v4/configurations.html#ovewrite-translations) section. You can see there how to use the new API and how to make your translations more accurate.

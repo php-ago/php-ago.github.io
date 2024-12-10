@@ -27,7 +27,7 @@ features:
     details: Ago has a flexible date parsing and can parse several different date formats, such as UNIX timestamp, date strings, `Carbon` instances and much more
     icon: 🧩
   - title: Configurable Options to Suit Diverse Use Cases
-    details: You can configure Ago to suit your needs to the point where you can even modify the output format of the date, override translation sets and more
+    details: You can configure Ago to suit your needs to the point where you can even modify the output format of the date, overwrite translation sets and more
     icon: ⚙️
   - title: Comprehensive Testing for Reliability
     details: You cannot find datetime PHP library that is tested better than this one. Ago has a comprehensive test suite that covers testing for all the supported languages
