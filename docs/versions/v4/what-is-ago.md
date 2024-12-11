@@ -27,7 +27,7 @@ You might be wondering why you should use this library over others. Here are a f
 | 🇩🇪    | German    | `"de"` | `Lang::DE` |
 
 ## Contribute to Localization
-Adding a new language is straightforward! Check out the [contribution guide](/contribute) and submit a pull request with your translation. Contributions that follow the steps outlined will be reviewed and merged promptly—your help is always appreciated!
+Adding a new language is straightforward! Check out the [contribution guide](/v4/contribute.html) and submit a pull request with your translation. Contributions that follow the steps outlined will be reviewed and merged promptly—your help is always appreciated!
 
 :::tip Keep updated
 Make sure to update the library to the latest version to get the latest languages support.

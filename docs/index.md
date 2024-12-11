@@ -13,8 +13,8 @@ hero:
       text: What is Ago?
       link: /v4/what-is-ago
     - theme: alt
-      text: GitHub
-      link: https://github.com/php-ago/ago
+      text: Upgrade to v4
+      link: /v4/upgrade
 
 features:
   - title: No Dependencies

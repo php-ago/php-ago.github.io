@@ -70,7 +70,7 @@ Now, when you call the `TimeAgo::trans` method, you will get `Live` instead of `
 ### What Can Be Overwritten?
 There are many things you can overwrite, everything defined in the [`Serhii\Ago\LangOverwrite`](https://github.com/php-ago/ago/blob/main/src/LangOverwrite.php) class can be changed.
 
-- `lang` - Language code [ISO 639-1 Standard](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes)
+- `lang` - Language code [ISO 639-1 Standard](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) that you want to overwrite
 - `format` - Format of the final output
 - `ago` - Suffix for the final output, like "ago"
 - `online` - Is shown when the date is without a small threshold
