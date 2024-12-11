@@ -107,14 +107,16 @@ For Chinese Simplified rules are the simplest you can get. In Chinese, you don't
 If you don't provide rules, it will default to the field `other`, which is the only field we have in the translation file. This is enough.
 
 ## Step 5. Tests
-Tests for all translations live in `tests/Translations` directory. You can copy one of the existing tests and change it whatever you want to match your language. Just make sure you have enough cases to cover specifics of your language.
+Tests for all translations live in [`/tests/Translations`](https://github.com/php-ago/ago/tree/main/tests/Translations) directory in the root of the project. You can copy one of the existing tests and change it whatever you want to match your language. Just make sure you have enough cases to cover specifics of your language.
 
 :::tip PHPUnit Data Providers
 If you don't know about [PHPUnit Data Providers](https://docs.phpunit.de/en/10.5/writing-tests-for-phpunit.html#data-providers) you might want to read about it first before you start writing tests.
 :::
 
+I'm not going to put the whole test here because it's long, but you can check this file on [GitHub](https://github.com/php-ago/ago/blob/main/tests/Translations/ChineseTest.php).
+
 ## Step 6. Changelog
-The last and final step is letting everybody know that we have added support for a new language. Update [`CHANGELOG.md`](https://github.com/php-ago/ago/blob/main/CHANGELOG.md) file with a new line:
+Let everybody know that you have added support for a new language. Update [`CHANGELOG.md`](https://github.com/php-ago/ago/blob/main/CHANGELOG.md) file with a new line:
 
 ```md
 # Release Notes
@@ -124,4 +126,11 @@ The last and final step is letting everybody know that we have added support for
 
 ## v4.0.0 (2024-12-11)
 > 🚀 [Upgrade Guide from v3 to v4](https://php-ago.github.io/v4/upgrade)
+```
+
+## Step 7. Checks
+The last and final step is to run `composer check` command to make sure everything is fine. It will run tests and static analysis tools to ensure that everything is working as expected before committing your changes.
+
+```bash
+composer check
 ```
