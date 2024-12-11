@@ -56,19 +56,19 @@ use DateTimeImmutable;
 use Carbon\Carbon;
 use DateTime;
 
-echo TimeAgo::trans('now - 10 seconds'); // "10 seconds ago"
+echo TimeAgo::trans('-10 seconds'); // "10 seconds ago"
 echo TimeAgo::trans(time() - 86400); // "1 day ago"
 echo TimeAgo::trans(Carbon::now()->subDay()); // "1 day ago"
 echo TimeAgo::trans(CarbonImmutable::now()->subDay()); // "1 day ago"
-echo TimeAgo::trans(new DateTime('now - 5 minutes')); // "5 minutes ago"
-echo TimeAgo::trans(new DateTimeImmutable('now - 5 minutes')); // "5 minutes ago"
+echo TimeAgo::trans(new DateTime('-5 minutes')); // "5 minutes ago"
+echo TimeAgo::trans(new DateTimeImmutable('-5 minutes')); // "5 minutes ago"
 ```
 
 When you pass the date in the future, it will output the interval to this date. It's very convenient, because you can pass almost any date format and it will give you the correct output.
 
 ```php
 echo TimeAgo::trans(time() + 86400); // "1 day"
-echo TimeAgo::trans('now + 10 minutes'); // "10 minutes"
+echo TimeAgo::trans('+10 minutes'); // "10 minutes"
 ```
 
 :::warning Version 2.2.0

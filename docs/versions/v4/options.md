@@ -11,7 +11,7 @@ The `trans` method is [variadic](https://en.wikipedia.org/wiki/Variadic_function
 use Serhii\Ago\TimeAgo;
 use Serhii\Ago\Option;
 
-$output = TimeAgo::trans('now - 30 seconds', Option::ONLINE);
+$output = TimeAgo::trans('-30 seconds', Option::ONLINE);
 
 echo $output; // "Online"
 ```

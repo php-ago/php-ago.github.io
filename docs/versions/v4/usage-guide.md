@@ -15,10 +15,9 @@ For basic usage, simply provide a past or future date, and the library will calc
 ```php
 use Serhii\Ago\TimeAgo;
 
-$createdAt = strtotime('now - 33 minutes');
-$output = TimeAgo::trans($createdAt);
+$out = TimeAgo::trans('-33 minutes');
 
-echo $output; // "33 minutes ago"
+echo $out; // outputs "33 minutes ago"
 ```
 
 When you pass the future date, it removes the unnecessary suffix. It's very convenient for outputting the time left until a certain event to make a user-friendly countdown.
@@ -26,10 +25,9 @@ When you pass the future date, it removes the unnecessary suffix. It's very conv
 ```php
 use Serhii\Ago\TimeAgo;
 
-$toNewYear = strtotime('midnight 1 January next year');
-$output = TimeAgo::trans($toNewYear);
+$out = TimeAgo::trans('midnight 1 January next year');
 
-echo $output; // Outputs time left to New Year
+echo $out; // outputs time left to New Year
 ```
 
 ## Passing Other Inputs
@@ -41,7 +39,7 @@ String date will be processed by the PHP's [`strtotime`](https://www.php.net/man
 ```php
 use Serhii\Ago\TimeAgo;
 
-echo TimeAgo::trans('now - 10 seconds'); // "10 seconds ago"
+echo TimeAgo::trans('-10 seconds'); // "10 seconds ago"
 ```
 
 ### Unix Timestamp Date
@@ -61,10 +59,10 @@ use Serhii\Ago\TimeAgo;
 use DateTimeImmutable;
 use DateTime;
 
-$date = new DateTime('now - 5 minutes');
+$date = new DateTime('-5 minutes');
 echo TimeAgo::trans($date); // "5 minutes ago"
 
-$date = new DateTimeImmutable('now + 5 minutes');
+$date = new DateTimeImmutable('+5 minutes');
 echo TimeAgo::trans($date); // "5 minutes"
 ```
 
