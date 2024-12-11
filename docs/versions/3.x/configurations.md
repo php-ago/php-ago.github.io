@@ -1,9 +1,14 @@
 ---
 outline: deep
-title: Configurations
+search: false
+title: Configurations - 4.x
 ---
 
 # Configurations
+
+:::danger Outdated version
+You are viewing the outdated version of Ago library. [Switch to the latest version](/) to get all the new features and improvements
+:::
 
 ## Set language
 Default language is English. Optionally you can set the language in your application by calling `set()` method and passing a flag `ru` for Russian or `en` for English language. You can see supported languages in the next section.

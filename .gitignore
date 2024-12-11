@@ -1,6 +1,6 @@
 node_modules
 dist
+yarn.lock
 .temp
-.cache
+cache
 yarn-error.log
-docs/.vuepress/dist

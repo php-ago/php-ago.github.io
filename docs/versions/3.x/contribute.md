@@ -1,7 +1,12 @@
 ---
 outline: deep
-title: Contribute
+search: false
+title: Contribute - 3.x
 ---
+
+:::danger Outdated version
+You are viewing the outdated version of Ago library. [Switch to the latest version](/) to get all the new features and improvements
+:::
 
 # Contribute
 If you want to contribute support for a language that is fully supported, all you need to do is to copy/paste 3 files and change them to match the language that you want to add. Then add 1 line to README.md file. Here is my [commit](https://github.com/php-ago/ago/commit/5a7d58569d6cd0af1d7981f3256f59ce19a6ad0e) for supporting Ukrainian language that shows changes that I did. You need to add 3 files for supporting another language. Here are 4 steps that you need to follow.
@@ -9,7 +14,7 @@ If you want to contribute support for a language that is fully supported, all yo
 ## How to make a PR
 Before you start working on issue, add a comment to it, so that other folks know that someone is already working on it.
 
-When you make a pull request, make sure that you don't pull it in the master branch. Pull it in the next package version. The name of the package version (Realease) matches the name of the branch. You can go to the [branches](https://github.com/php-ago/ago/branches) page, and see what is the latest branch that is not merged, that branch is going to be the next package update.
+When you make a pull request, make sure that you don't pull it in the master branch. Pull it in the next library version. The name of the library version (Release) matches the name of the branch. You can go to the [branches](https://github.com/php-ago/ago/branches) page, and see what is the latest branch that is not merged, that branch is going to be the next library update.
 
 ## 1 Step. Adding translation
 Translation files live in `resources/trans` directory. Here is the example of the language file for Russian language.

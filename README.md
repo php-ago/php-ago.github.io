@@ -1,1 +1,1 @@
-# Documentation website for [ago](https://github.com/php-ago/ago) package
+# Documentation website for [ago](https://github.com/php-ago/ago) library
