@@ -61,11 +61,29 @@ $config = new Config(overwrites: [
 ]);
 
 TimeAgo::configure($config);
+
+echo TimeAgo::trans('now'); // output: "Live"
 ```
 
-For example, instead of `1 minute ago` you want to have the output `1 minute before`. To achieve that, create `['ago' => 'before']` array and pass it as the second argument to method `set()` in `Serhii\Ago\Lang` class.
+Now, when you call the `TimeAgo::trans` method, you will get `Live` instead of `Online` if you time is less than a certain threshold.
 
-## TODO
-The new `Serhii\Ago\LangForm` should be used for `day`, `hour`, `minute`, `second`, `week`, `month`, `year` translations. It allows you to have more flexibility in the translations and make them more accurate.
+### What Can Be Overwritten?
+There are many things you can overwrite, everything defined in the [`Serhii\Ago\LangOverwrite`](https://github.com/php-ago/ago/blob/main/src/LangOverwrite.php) class can be changed.
+
+- `lang` - Language code [ISO 639-1 Standard](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes)
+- `format` - Format of the final output
+- `ago` - Suffix for the final output, like "ago"
+- `online` - Is shown when the date is without a small threshold
+- `justNow` - Is shown when the date is within a small threshold with `Option::JUST_NOW` enabled
+- `second` - Language form, [`LangForm::class`](https://github.com/php-ago/ago/blob/main/src/LangForm.php)
+- `minute` - Language form, [`LangForm::class`](https://github.com/php-ago/ago/blob/main/src/LangForm.php)
+- `hour` - Language form, [`LangForm::class`](https://github.com/php-ago/ago/blob/main/src/LangForm.php)
+- `day` - Language form, [`LangForm::class`](https://github.com/php-ago/ago/blob/main/src/LangForm.php)
+- `week` - Language form, [`LangForm::class`](https://github.com/php-ago/ago/blob/main/src/LangForm.php)
+- `month` - Language form, [`LangForm::class`](https://github.com/php-ago/ago/blob/main/src/LangForm.php)
+- `year'` - Language form, [`LangForm::class`](https://github.com/php-ago/ago/blob/main/src/LangForm.php)
+
+### Language Form `LangForm::class`
+The `Serhii\Ago\LangForm` class is used for describing plural form of `day`, `hour`, `minute`, `second`, `week`, `month`, `year`. It allows you to have more flexibility in the translations and make them more accurate for rich languages that have several plural forms for numbers.
 
 `LangForm` has only a single required parameter `other`, which is used as a default value if other values are not provided. You can also provide `zero`, `one`, `few` and `many` values if you need to have different translations for different plural forms.
