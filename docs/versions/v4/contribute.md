@@ -107,7 +107,11 @@ For Chinese Simplified rules are the simplest you can get. In Chinese, you don't
 If you don't provide rules, it will default to the field `other`, which is the only field we have in the translation file. This is enough.
 
 ## Step 5. Tests
-Tests for all translations are live in `tests/Translations` directory. Just copy one of the existing tests and change it whatever you want to match your language. Just make sure you have enough cases to cover specifics of your language. If you don't know about [PHPUnit Data Providers](https://phpunit.de/manual/3.7/en/writing-tests-for-phpunit.html) you might want to read about it.
+Tests for all translations live in `tests/Translations` directory. You can copy one of the existing tests and change it whatever you want to match your language. Just make sure you have enough cases to cover specifics of your language.
+
+:::tip PHPUnit Data Providers
+If you don't know about [PHPUnit Data Providers](https://docs.phpunit.de/en/10.5/writing-tests-for-phpunit.html#data-providers) you might want to read about it first before you start writing tests.
+:::
 
 ## Step 6. Changelog
 The last and final step is letting everybody know that we have added support for a new language. Update [`CHANGELOG.md`](https://github.com/php-ago/ago/blob/main/CHANGELOG.md) file with a new line:
