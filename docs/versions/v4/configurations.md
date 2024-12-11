@@ -24,11 +24,11 @@ The list of all available configurations that you can change through the `Serhii
 
 | Parameter | Type | Default | Description |
 | --- | --- | --- | --- |
-| [lang](/v4/configurations.html#change-language) | `Lang` | `Lang::EN` | [Language](/v4/what-is-ago.html#supported-languages) of the output |
+| [lang](/v4/configurations.html#change-language) | `string` | `Lang::EN` | [Language code](/v4/what-is-ago.html#supported-languages) of the output following the [ISO 639-1 Standard](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) |
 | [overwrites](/v4/configurations.html#ovewrite-translations) | `LangOverwrite[]` | `[]` | Custom translations for the language |
 
 ## Change Language
-Default language is English. Optionally you can change the language in your application by passing one of the values on `Serhii\Ago\Lang` static class.
+Default language is English. Optionally you can change the language in your application by passing one of the values on `Serhii\Ago\Lang` static class, or you can pass a string with the language code like `'ru'`, `'en'`, `'nl'`, etc.
 
 ```php [TimeAgo::configure]
 use Serhii\Ago\TimeAgo;
