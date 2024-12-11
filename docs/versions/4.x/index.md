@@ -14,7 +14,7 @@ For more details about this library you can find on the ["What is Ago?"](/4.x/wh
 ## Quick Start
 To use Ago, first, you need to install it via [Composer](https://getcomposer.org/) package manager and have minimum PHP version `8.1`.
 ```bash
-composer require serhii/ago
+composer require serhii/ago:^4.0
 ```
 
 ## Supported PHP Versions

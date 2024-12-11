@@ -35,6 +35,6 @@ Make sure to update the library to the latest version to get the latest language
 :::
 
 ### Found an Issue?
-If you encounter a bug 🐞 or have a feature request, please let us know by creating an [issue](https://github.com/php-ago/ago/issues/new). I'll address it promptly to keep the library running smoothly.
+If you encounter a bug 🐛 or have a feature request, please let us know by creating an [issue](https://github.com/php-ago/ago/issues/new). I'll address it promptly to keep the library running smoothly.
 
 Let's make date formatting intuitive and localized together!

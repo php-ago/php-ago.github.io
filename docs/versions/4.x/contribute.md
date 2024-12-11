@@ -129,7 +129,7 @@ Let everybody know that you have added support for a new language. Update [`CHAN
 ```
 
 ## Step 7. Checks
-The last and final step is to run `composer check` command to make sure everything is fine. It will run tests and static analysis tools to ensure that everything is working as expected before committing your changes.
+The last and final step is to run a custom command `composer check` to make sure everything is fine. It will run tests and static analysis tools to ensure that everything is working as expected before committing your changes.
 
 ```bash
 composer check

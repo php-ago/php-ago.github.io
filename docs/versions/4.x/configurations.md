@@ -24,8 +24,8 @@ The list of all available configurations that you can change through the `Serhii
 
 | Parameter | Type | Default | Description |
 | --- | --- | --- | --- |
-| [lang](/4.x/configurations.html#change-language) | `string` | `Lang::EN` | [Language code](/4.x/what-is-ago.html#supported-languages) of the output following the [ISO 639-1 Standard](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) |
-| [overwrites](/4.x/configurations.html#ovewrite-translations) | `LangOverwrite[]` | `[]` | Custom translations for the language |
+| [lang](#change-language) | `string` | `Lang::EN` | [Language code](/4.x/what-is-ago.html#supported-languages) of the output following the [ISO 639-1 Standard](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) |
+| [overwrites](#overwrite-translations) | `LangOverwrite[]` | `[]` | Custom translations for the language |
 
 ## Change Language
 Default language is English. Optionally you can change the language in your application by passing one of the values on `Serhii\Ago\Lang` static class, or you can pass a string with the language code like `'ru'`, `'en'`, `'nl'`, etc.
@@ -57,7 +57,7 @@ If you use the `Lang::set` method for changing the language, it will not reset t
 The list of all supported languages you can find in [Supported Languages](/4.x/what-is-ago.html#supported-languages) section.
 :::
 
-## Override Translations
+## Overwrite Translations
 There are cases when you want to replace certain translations with your own ones. For example, instead of `1 minute ago` you want to have the output `1m` or `1 min ago`. You can do it with "Overwrites". All you need to do is just to define everything you want to overwrite for a specific language.
 
 Pass an array of overwrites to the configurations. Let's see how we can change the `Online` to `Live` in English language.
