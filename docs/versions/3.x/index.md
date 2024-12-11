@@ -18,7 +18,7 @@ This library is well tested, optimized and already used in many production apps.
 To use Ago, first, you need to install it via [Composer](https://getcomposer.org/) package manager and have minimum PHP version `7.1`.
 
 ```bash
-composer require serhii/ago:3.2.6
+composer require serhii/ago:^3.2
 ```
 
 ## Supported PHP versions
