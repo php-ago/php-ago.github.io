@@ -21,7 +21,7 @@ features:
     details: Ago is a standalone library that doesn't depend on any other libraries or extensions, making it lightweight and efficient. It's optimized for performance and ensures fast and accurate conversions.
     icon: 🚀
   - title: Support for Multiple Languages
-    details: 🇬🇧 🇷🇺 🇺🇦 🇳🇱 🇩🇪 🇨🇳 🇧🇾 🇪🇸 🇯🇵 🇫🇷<br>You can output date in several different languages such as English, Russian, Chinese, Ukrainian, Dutch, German and you can easily contribute your own language
+    details: 🇬🇧 🇷🇺 🇺🇦 🇳🇱 🇩🇪 🇨🇳<br>You can output date in several different languages such as English, Russian, Chinese, Ukrainian, Dutch, German and you can easily contribute your own language
     icon: 🌍
   - title: Flexible Date and Time Parsing
     details: Ago has a flexible date parsing and can parse several different date formats, such as UNIX timestamp, date strings, `Carbon` instances and much more

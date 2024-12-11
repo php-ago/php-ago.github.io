@@ -18,13 +18,14 @@ You might be wondering why you should use this library over others. Here are a f
 - **Easy to Use**: Simple and intuitive API that requires minimal setup that focuses just on what you need.
 
 ## Supported Languages
-| Flag | Language  | String | Enum       |
-| ---- | --------- | ------ | ---------- |
-| 🇬🇧    | English   | `"en"` | `Lang::EN` |
-| 🇷🇺    | Russian   | `"ru"` | `Lang::RU` |
-| 🇺🇦    | Ukrainian | `"uk"` | `Lang::UK` |
-| 🇳🇱    | Dutch     | `"nl"` | `Lang::NL` |
-| 🇩🇪    | German    | `"de"` | `Lang::DE` |
+| Flag | Language           | String | Enum       |
+| ---- | ------------------ | ------ | ---------- |
+| 🇬🇧    | English            | `"en"` | `Lang::EN` |
+| 🇷🇺    | Russian            | `"ru"` | `Lang::RU` |
+| 🇺🇦    | Ukrainian          | `"uk"` | `Lang::UK` |
+| 🇳🇱    | Dutch              | `"nl"` | `Lang::NL` |
+| 🇩🇪    | German             | `"de"` | `Lang::DE` |
+| 🇨🇳    | Chinese Simplified | `"zh"` | `Lang::ZH` |
 
 ## Contribute to Localization
 Adding a new language is straightforward! Check out the [contribution guide](/v4/contribute.html) and submit a pull request with your translation. Contributions that follow the steps outlined will be reviewed and merged promptly—your help is always appreciated!
