@@ -33,8 +33,6 @@ Run the update command to update the Ago library to the version `^4.0`
 composer update serhii/ago:^4.0
 ```
 
-If you have any issues or questions, feel free to ask in the [GitHub Discussions in the Q&A section](https://github.com/php-ago/php-ago.github.io/discussions/categories/q-a) for documentation.
-
 ## Step 3: Move Overwrites <Badge type="warning" text="possible" />
 In the previous version, we used to pass the custom translations (overwrites) directly to the `Lang::set` method as a second argument. In `4.x`, we define overwrites in the `Serhii\Ago\Config` class and pass them to the `TimeAgo::configure` or `TimeAgo::reconfigure` method.
 
@@ -68,7 +66,7 @@ $config = new Config(overwrites: [
 TimeAgo::configure($config);
 ```
 
-Now, follow the [Step 3](/4.x/upgrade.html#step-3-change-overwrites) to update them to the new structure.
+Now, follow the [Step 4](#step-4-change-overwrites) to update them to the new structure.
 
 ## Step 4: Change Overwrites <Badge type="warning" text="possible" />
 If you are using custom translations (overwrites) to overwrite the default translations, you need to change the way you pass them. In `4.x` we've changed the translation files structure to be more flexible and easier to use.
@@ -133,12 +131,14 @@ So if you use overwrites in you app, you need to update them to the new structur
 
 ::: code-group
 ```php [New way]
+use Serhii\Ago\LangOverwrite; // [!code ++:2]
+use Serhii\Ago\LangForm;
 use Serhii\Ago\TimeAgo;
 use Serhii\Ago\Config;
 use Serhii\Ago\Lang;
 
 $config = new Config(overwrites: [
-    new LangOverwrite(
+    new LangOverwrite( // [!code ++:5]
         lang: Lang::EN, // Which language to overwrite
         ago: 'before',
         day: new LangForm(one: 'Day', other: 'Days'),
@@ -160,3 +160,7 @@ Lang::set('en', [
 :::
 
 For the full tutorial on how to use the new structure, check the [Overwrite Translations](/4.x/configurations.html#ovewrite-translations) section. You can see there how to use the new API and how to make your translations more accurate.
+
+:::tip Need Help?
+If you have any issues or questions, feel free to ask in the [GitHub Discussions in the Q&A section](https://github.com/php-ago/php-ago.github.io/discussions/categories/q-a) for documentation.
+:::
