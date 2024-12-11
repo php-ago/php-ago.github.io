@@ -7,7 +7,7 @@ description: Learn how to contribute to Ago library by adding support for a new 
 # Contribute
 If you want to contribute a new language support, you need to follow these simple and easy steps. Let's add a Chinese Mandarin together in this guide.
 
-## Step 1. Create a new Constant
+## Step 1. Constant
 To [`Lang.php`](https://github.com/php-ago/ago/blob/main/src/Lang.php) file add a new constant with [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language code just below the last constant. Don't forget a little comment with the language name.
 
 ```php
@@ -18,10 +18,10 @@ final class Lang
     public const UK = 'uk'; // Ukrainian
     public const NL = 'nl'; // Dutch
     public const DE = 'de'; // German
-    public const ZH = 'zh'; // Chinese // [!code ++]
+    public const ZH = 'zh'; // Chinese // [!code focus] // [!code ++]
 ```
 
-## Step 2. Update README File
+## Step 2. Readme
 Update [`README.md`](https://github.com/php-ago/ago/blob/main/README.md) file to let everybody know that we have added support for a new language. Add a new line to the **Supported Languages** section.
 
 ```md
@@ -33,10 +33,10 @@ Update [`README.md`](https://github.com/php-ago/ago/blob/main/README.md) file to
 | 🇺🇦   | Ukrainian             | `uk`      |
 | 🇳🇱   | Dutch                 | `nl`      |
 | 🇩🇪   | German                | `de`      |
-| 🇨🇳   | Chinese Simplified    | `zh`      | // [!code ++]
+| 🇨🇳   | Chinese Simplified    | `zh`      | // [!code focus] // [!code ++]
 ```
 
-## Step 3. Add Translations
+## Step 3. Translations
 Translation files live in the [`/resources/lang/`](https://github.com/php-ago/ago/tree/main/resources/lang) directory of the project. Translation is a simple PHP with translations that are returned as a `LangSet` object.
 
 I'll copy/paste `en.php` file to `zh.php` and change all the values to match Chinese Simplified. Here is the content of the new file:
@@ -50,7 +50,7 @@ use Serhii\Ago\Lang;
 use Serhii\Ago\LangForm;
 use Serhii\Ago\LangSet;
 
-return new LangSet(
+return new LangSet( // [!code focus:14]
     lang: Lang::ZH,
     format: "{num}{timeUnit}{ago}",
     ago: "前",
@@ -70,10 +70,12 @@ Since Chinese Simplified doesn't have special forms for words, we can use `other
 
 For more information about these fields, you can check [What Can Be Overwritten](/v4/configurations.html#what-can-be-overwritten) section.
 
-## Step 4. Add Rules
-Rules live in the [`/resources/rules.php`](https://github.com/php-ago/ago/blob/main/resources/rules.php) file.
+## Step 4. Rules
+Rules live in the [`/resources/rules.php`](https://github.com/php-ago/ago/blob/main/resources/rules.php) file. As you can see down below, rule argument names match the language form names that you defined in the translation file.
 
-```php{22-28}
+These rules will determine which form of the word to use based on the current number in the output. Let's add rules for Chinese Simplified.
+
+```php
 /**
  * @return array<string,Rule>
  */
@@ -95,16 +97,27 @@ return static function (int $num): array {
             few: ($end === 2 || $end === 3 || $end === 4) && ($num < 10 || $num > 20),
             many: ($num >= 5 && $num <= 20) || $end === 0 || $end >= 5,
         ),
-        'zh' => new Rule(
-            zero: $num === 0,
-            one: $num === 1,
-            two: $num === 2,
-            few: true,
-            many: true,
-        ),
+        'zh' => new Rule(), // [!code focus] // [!code ++]
     ];
 };
 ```
 
-## Step 5. Adding Tests
+For Chinese Simplified rules are the simplest you can get. In Chinese, you don't have to change the form of the word based on the number. So, I just say that `'zh' => new Rule(),`.
+
+If you don't provide rules, it will default to the field `other`, which is the only field we have in the translation file. This is enough.
+
+## Step 5. Tests
 Tests for all translations are live in `tests/Translations` directory. Just copy one of the existing tests and change it whatever you want to match your language. Just make sure you have enough cases to cover specifics of your language. If you don't know about [PHPUnit Data Providers](https://phpunit.de/manual/3.7/en/writing-tests-for-phpunit.html) you might want to read about it.
+
+## Step 6. Changelog
+The last and final step is letting everybody know that we have added support for a new language. Update [`CHANGELOG.md`](https://github.com/php-ago/ago/blob/main/CHANGELOG.md) file with a new line:
+
+```md
+# Release Notes
+
+## v4.1.0 (2025-01-01) // [!code focus:3] // [!code ++:3]
+- 🇨🇳 Add Chinese Simplified language support
+
+## v4.0.0 (2024-12-11)
+> 🚀 [Upgrade Guide from v3 to v4](https://php-ago.github.io/v4/upgrade)
+```
