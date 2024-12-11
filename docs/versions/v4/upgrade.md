@@ -31,49 +31,24 @@ For example, take a look at the differences in structure for the Russian languag
 
 ::: code-group
 ```php [New structure]
-return [
-    "lang" => "ru",
-    "format" => "{num} {timeUnit} {ago}",
-    "ago" => "назад",
-    "online" => "В сети",
-    "justnow" => "Только что",
+use Serhii\Ago\Lang;
+use Serhii\Ago\LangForm;
+use Serhii\Ago\LangSet;
 
-    "second" => [
-        "one" => "секунда",
-        "few" => "секунды",
-        "other" => "секунд",
-    ],
-    "minute" => [
-        "one" => "минута",
-        "few" => "минуты",
-        "other" => "минут",
-    ],
-    "hour" => [
-        "one" => "час",
-        "few" => "часа",
-        "other" => "часов",
-    ],
-    "day" => [
-        "one" => "день",
-        "few" => "дня",
-        "other" => "дней",
-    ],
-    "week" => [
-        "one" => "неделя",
-        "few" => "недели",
-        "other" => "недель",
-    ],
-    "month" => [
-        "one" => "месяц",
-        "few" => "месяца",
-        "other" => "месяцев",
-    ],
-    "year" => [
-        "one" => "год",
-        "few" => "года",
-        "other" => "лет",
-    ],
-];
+return new LangSet(
+    lang: Lang::RU,
+    format: "{num} {timeUnit} {ago}",
+    ago: "назад",
+    online: "В сети",
+    justNow: "Только что",
+    second: new LangForm(one: "секунда", few: "секунды", other: "секунд"),
+    minute: new LangForm(one: "минута", few: "минуты", other: "минут"),
+    hour: new LangForm(one: "час", few: "часа", other: "часов"),
+    day: new LangForm(one: "день", few: "дня", other: "дней"),
+    week: new LangForm(one: "неделя", few: "недели", other: "недель"),
+    month: new LangForm(one: "месяц", few: "месяца", other: "месяцев"),
+    year: new LangForm(one: "год", few: "года", other: "лет"),
+);
 ```
 
 ```php [Old structure]
@@ -106,7 +81,7 @@ return [
 ```
 :::
 
-The structure is uses [CLDR Specifications](https://cldr.unicode.org/index/cldr-spec/plural-rules) for the pluralization of the words. This allows you to have more flexibility in the translations and make them more accurate.
+The structure is uses [CLDR Specifications](https://cldr.unicode.org/index/cldr-spec/plural-rules) for the pluralization of the words. This allows you to have more flexibility in the translations and make them more accurate. Overall, the new way is more type safe and easier to use than the old one.
 
 So if you use overwrites in you app, you need to update them to the new structure and move them to `TimeAgo::configure`.
 
