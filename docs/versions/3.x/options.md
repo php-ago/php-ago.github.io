@@ -1,7 +1,7 @@
 ---
 outline: deep
 search: false
-title: Options - v3
+title: Options - 3.x
 ---
 
 :::danger Outdated version

@@ -1,6 +1,6 @@
 ---
 outline: deep
-title: Configurations - v4
+title: Configurations - 4.x
 description: Learn how to configure Ago library in your application
 ---
 
@@ -16,7 +16,7 @@ The `TimeAgo::configure` method lets you update specific settings without alteri
 Use the `TimeAgo::reconfigure` method to **completely replace the current configuration**. This function resets all settings to their default values before applying the new configuration, ensuring a clean slate for your updates.
 
 :::tip Reset Configuration Option
-You also have a `Serhii\Ago\Option::RESET_CONF` option to reset the configuration before getting the processed date output. This is useful when you want to have a clean slate for the output. Read about it in the [Options](/v4/options) section.
+You also have a `Serhii\Ago\Option::RESET_CONF` option to reset the configuration before getting the processed date output. This is useful when you want to have a clean slate for the output. Read about it in the [Options](/4.x/options) section.
 :::
 
 ## Available Configurations
@@ -24,8 +24,8 @@ The list of all available configurations that you can change through the `Serhii
 
 | Parameter | Type | Default | Description |
 | --- | --- | --- | --- |
-| [lang](/v4/configurations.html#change-language) | `string` | `Lang::EN` | [Language code](/v4/what-is-ago.html#supported-languages) of the output following the [ISO 639-1 Standard](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) |
-| [overwrites](/v4/configurations.html#ovewrite-translations) | `LangOverwrite[]` | `[]` | Custom translations for the language |
+| [lang](/4.x/configurations.html#change-language) | `string` | `Lang::EN` | [Language code](/4.x/what-is-ago.html#supported-languages) of the output following the [ISO 639-1 Standard](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) |
+| [overwrites](/4.x/configurations.html#ovewrite-translations) | `LangOverwrite[]` | `[]` | Custom translations for the language |
 
 ## Change Language
 Default language is English. Optionally you can change the language in your application by passing one of the values on `Serhii\Ago\Lang` static class, or you can pass a string with the language code like `'ru'`, `'en'`, `'nl'`, etc.
@@ -54,7 +54,7 @@ If you use the `Lang::set` method for changing the language, it will not reset t
 :::
 
 :::tip Supported Languages
-The list of all supported languages you can find in [Supported Languages](/v4/what-is-ago.html#supported-languages) section.
+The list of all supported languages you can find in [Supported Languages](/4.x/what-is-ago.html#supported-languages) section.
 :::
 
 ## Override Translations

@@ -1,7 +1,7 @@
 ---
 outline: deep
 search: false
-title: Get Started - v3
+title: Get Started - 3.x
 ---
 
 :::danger Outdated version

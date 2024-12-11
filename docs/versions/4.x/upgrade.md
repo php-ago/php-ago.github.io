@@ -1,20 +1,22 @@
 ---
 outline: deep
-title: Upgrade Guide - v4
-description: Learn how to upgrade Ago library from v3 to v4
+title: Upgrade Guide - 4.x
+description: Learn how to upgrade Ago library from 3.x to 4.x
 ---
 
-# Upgrade Guide from v3 to v4
-Version `4.0` has gotten a lot of improvements and changes. The good news is that the upgrade process is straightforward and easy. We've documented every step you need to take to upgrade your application from `v3` to `v4`.
+# Upgrade Guide from Version 3.x to 4.x
 
-It will take you 5 to 10 minutes to complete the upgrade, depending on the complexity of your application and the amount of configuration you have.
+**Version 4** introduces significant improvements and updates. The great news is that the upgrade process is simple and straightforward. We've outlined all the necessary steps to help you seamlessly transition from version `3.x` to `4.x`.
 
-:::tip
-Some steps marked as <Badge type="warning" text="possible" />, because you might not need to do them if you don't use the configuration or feature that is mentioned in the step.
+The process should take approximately 5 to 10 minutes, depending on the complexity of your application and the extent of your configurations.
+
+:::tip Optional Steps
+Some steps are marked with <Badge type="warning" text="optional" />, as they may not apply to you if you’re not using the specific configurations or features mentioned.
 :::
 
-## Step 1: Upgrade `composer.json`
-The first step is updating the `composer.json` file to use the latest version of Ago library. Change `serhii/ago` version to `^4.0`.
+## Step 1: Update `composer.json`
+
+The first step is to update your `composer.json` file to require the latest version of the Ago library. Replace the version of `serhii/ago` with `^4.0` as shown below:
 
 ```json
 {
@@ -34,7 +36,7 @@ composer update serhii/ago:^4.0
 If you have any issues or questions, feel free to ask in the [GitHub Discussions in the Q&A section](https://github.com/php-ago/php-ago.github.io/discussions/categories/q-a) for documentation.
 
 ## Step 3: Move Overwrites <Badge type="warning" text="possible" />
-In the previous version, we used to pass the custom translations (overwrites) directly to the `Lang::set` method as a second argument. In `v4`, we define overwrites in the `Serhii\Ago\Config` class and pass them to the `TimeAgo::configure` or `TimeAgo::reconfigure` method.
+In the previous version, we used to pass the custom translations (overwrites) directly to the `Lang::set` method as a second argument. In `4.x`, we define overwrites in the `Serhii\Ago\Config` class and pass them to the `TimeAgo::configure` or `TimeAgo::reconfigure` method.
 
 If you have custom translations in your applications, they should look something like this:
 
@@ -66,10 +68,10 @@ $config = new Config(overwrites: [
 TimeAgo::configure($config);
 ```
 
-Now, follow the [Step 3](/v4/upgrade.html#step-3-change-overwrites) to update them to the new structure.
+Now, follow the [Step 3](/4.x/upgrade.html#step-3-change-overwrites) to update them to the new structure.
 
 ## Step 4: Change Overwrites <Badge type="warning" text="possible" />
-If you are using custom translations (overwrites) to overwrite the default translations, you need to change the way you pass them. In `v4` we've changed the translation files structure to be more flexible and easier to use.
+If you are using custom translations (overwrites) to overwrite the default translations, you need to change the way you pass them. In `4.x` we've changed the translation files structure to be more flexible and easier to use.
 
 For example, take a look at the differences in structure for the Russian language:
 
@@ -157,4 +159,4 @@ Lang::set('en', [
 ```
 :::
 
-For the full tutorial on how to use the new structure, check the [Overwrite Translations](/v4/configurations.html#ovewrite-translations) section. You can see there how to use the new API and how to make your translations more accurate.
+For the full tutorial on how to use the new structure, check the [Overwrite Translations](/4.x/configurations.html#ovewrite-translations) section. You can see there how to use the new API and how to make your translations more accurate.

@@ -1,7 +1,7 @@
 ---
 outline: deep
 search: false
-title: Contribute - v3
+title: Contribute - 3.x
 ---
 
 :::danger Outdated version

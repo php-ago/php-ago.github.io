@@ -8,7 +8,7 @@ export default defineVersionedConfig(
             'Date/time converter into "n time ago" format that supports multiple languages',
 
         versioning: {
-            latestVersion: 'v4',
+            latestVersion: '4.x',
         },
 
         lastUpdated: true,
@@ -18,7 +18,7 @@ export default defineVersionedConfig(
 
             // exclude old version pages from sitemap
             transformItems: items => {
-                return items.filter(item => !item.url.startsWith('v3/'))
+                return items.filter(item => !item.url.startsWith('3.x/'))
             },
         },
 
@@ -32,36 +32,36 @@ export default defineVersionedConfig(
             },
 
             sidebar: {
-                '/v3/': [
+                '/3.x/': [
                     {
                         text: 'Guide',
                         items: [
-                            { text: 'Get Started', link: '/v3/' },
-                            { text: 'Configurations', link: '/v3/configurations' },
-                            { text: 'Options', link: '/v3/options' },
+                            { text: 'Get Started', link: '/3.x/' },
+                            { text: 'Configurations', link: '/3.x/configurations' },
+                            { text: 'Options', link: '/3.x/options' },
                         ],
                     },
                     {
                         text: 'Information',
-                        items: [{ text: 'Contribute', link: '/v3/contribute' }],
+                        items: [{ text: 'Contribute', link: '/3.x/contribute' }],
                     },
                 ],
-                '/v4/': [
+                '/4.x/': [
                     {
                         text: 'Guide',
                         items: [
-                            { text: 'Get Started', link: '/v4/' },
-                            { text: 'Usage Guide', link: '/v4/usage-guide' },
-                            { text: 'Configurations', link: '/v4/configurations' },
-                            { text: 'Options', link: '/v4/options' },
+                            { text: 'Get Started', link: '/4.x/' },
+                            { text: 'Usage Guide', link: '/4.x/usage-guide' },
+                            { text: 'Configurations', link: '/4.x/configurations' },
+                            { text: 'Options', link: '/4.x/options' },
                         ],
                     },
                     {
                         text: 'Information',
                         items: [
-                            { text: 'Upgrade Guide', link: '/v4/upgrade' },
-                            { text: 'What is Ago?', link: '/v4/what-is-ago' },
-                            { text: 'Contribute', link: '/v4/contribute' },
+                            { text: 'Upgrade Guide', link: '/4.x/upgrade' },
+                            { text: 'What is Ago?', link: '/4.x/what-is-ago' },
+                            { text: 'Contribute', link: '/4.x/contribute' },
                         ],
                     },
                 ],
@@ -75,13 +75,13 @@ export default defineVersionedConfig(
                 {
                     component: 'VersionSwitcher',
                     props: {
-                        versions: ['v4', 'v3'],
-                        latestVersion: 'v4',
+                        versions: ['4.x', '3.x'],
+                        latestVersion: '4.x',
                     },
                 },
                 {
                     text: 'Documentation',
-                    link: '/v4/',
+                    link: '/4.x/',
                 },
                 {
                     text: 'Release Notes',

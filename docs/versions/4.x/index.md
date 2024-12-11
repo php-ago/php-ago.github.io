@@ -1,6 +1,6 @@
 ---
 outline: deep
-title: Get Started - v4
+title: Get Started - 4.x
 description: Learn how to install Ago library and get started with it
 ---
 
@@ -8,7 +8,7 @@ description: Learn how to install Ago library and get started with it
 Easily convert dates and times into a user-friendly "n time ago" format with support for multiple languages. Whether it's `1 hour ago`, `2 days ago`, or `Just now`, this library makes it simple to provide localized, human-readable date formatting.
 
 :::tip Read More
-For more details about this library you can find on the ["What is Ago?"](/v4/what-is-ago) page.
+For more details about this library you can find on the ["What is Ago?"](/4.x/what-is-ago) page.
 :::
 
 ## Quick Start

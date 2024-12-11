@@ -1,6 +1,6 @@
 ---
 outline: deep
-title: Contribute - v4
+title: Contribute - 4.x
 description: Learn how to contribute to Ago library by adding support for a new language
 ---
 
@@ -68,7 +68,7 @@ return new LangSet( // [!code focus:14]
 
 Since Chinese Simplified doesn't have special forms for words, we can use `other` form for a default value. Also, you see the `format` field value? I don't want any spaces between characters, so I removed them.
 
-For more information about these fields, you can check [What Can Be Overwritten](/v4/configurations.html#what-can-be-overwritten) section.
+For more information about these fields, you can check [What Can Be Overwritten](/4.x/configurations.html#what-can-be-overwritten) section.
 
 ## Step 4. Rules
 Rules live in the [`/resources/rules.php`](https://github.com/php-ago/ago/blob/main/resources/rules.php) file. As you can see down below, rule argument names match the language form names that you defined in the translation file.
@@ -121,11 +121,11 @@ Let everybody know that you have added support for a new language. Update [`CHAN
 ```md
 # Release Notes
 
-## v4.1.0 (2025-01-01) // [!code focus:3] // [!code ++:3]
+## 4.1.0 (2025-01-01) // [!code focus:3] // [!code ++:3]
 - 🇨🇳 Add Chinese Simplified language support
 
-## v4.0.0 (2024-12-11)
-> 🚀 [Upgrade Guide from v3 to v4](https://php-ago.github.io/v4/upgrade)
+## 4.0.0 (2024-12-11)
+> 🚀 [Upgrade Guide from 3.x to 4.x](https://php-ago.github.io/4.x/upgrade)
 ```
 
 ## Step 7. Checks

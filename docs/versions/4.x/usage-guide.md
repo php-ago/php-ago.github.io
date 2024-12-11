@@ -1,6 +1,6 @@
 ---
 outline: deep
-title: Usage Guide - v4
+title: Usage Guide - 4.x
 description: Learn how to use Ago library in your application
 ---
 
@@ -31,7 +31,7 @@ echo $out; // outputs time left to New Year
 ```
 
 ## Passing Other Inputs
-Other than an integer timestamp, you can also pass other formats that you can read in the next section ["Supported Formats"](/v4/usage-guide.html#passing-other-inputs).
+Other than an integer timestamp, you can also pass other formats that you can read in the next section ["Supported Formats"](/4.x/usage-guide.html#passing-other-inputs).
 
 ### String Date
 String date will be processed by the PHP's [`strtotime`](https://www.php.net/manual/en/function.strtotime.php) function with the server's timezone. Which is one of the most powerful function in PHP to parse about any English textual datetime description into a Unix timestamp.

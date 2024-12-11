@@ -8,13 +8,13 @@ hero:
   actions:
     - theme: brand
       text: Get Started →
-      link: /v4/
+      link: /4.x/
     - theme: alt
       text: What is Ago?
-      link: /v4/what-is-ago
+      link: /4.x/what-is-ago
     - theme: alt
-      text: Upgrade to v4
-      link: /v4/upgrade
+      text: Upgrade to 4.x
+      link: /4.x/upgrade
 
 features:
   - title: No Dependencies
