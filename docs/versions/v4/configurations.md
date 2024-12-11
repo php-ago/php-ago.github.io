@@ -85,7 +85,10 @@ Now, when you call the `TimeAgo::trans` method, you will get `Live` instead of `
 There are many things you can overwrite, everything defined in the [`Serhii\Ago\LangOverwrite`](https://github.com/php-ago/ago/blob/main/src/LangOverwrite.php) class can be changed.
 
 - `lang` - Language code [ISO 639-1 Standard](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) that you want to overwrite
-- `format` - Format of the final output
+- `format` - Format of the final output. It can contain the following placeholders:
+    - `{num}` is the number of time units like `1`, `2`, `3`, etc.
+    - `{timeUnit}` is the time unit itself like `second`, `minute`, `hour`, etc.
+    - `{ago}` is the word that is used to indicate that the time is in the past or in the future.
 - `ago` - Suffix for the final output, like "ago"
 - `online` - Is shown when the date is without a small threshold
 - `justNow` - Is shown when the date is within a small threshold with `Option::JUST_NOW` enabled
@@ -99,5 +102,9 @@ There are many things you can overwrite, everything defined in the [`Serhii\Ago\
 
 ### Language Form `LangForm::class`
 The `Serhii\Ago\LangForm` class is used for describing plural form of `day`, `hour`, `minute`, `second`, `week`, `month`, `year`. It allows you to have more flexibility in the translations and make them more accurate for rich languages that have several plural forms for numbers.
+
+:::tip CLDR Specification Rules
+If you have problems with correct translations for plural forms, refer to the [CLDR Specifications Rules](https://cldr.unicode.org/index/cldr-spec/plural-rules) for plural rules, it might help you to understand how to define the correct translations.
+:::
 
 `LangForm` has only a single required parameter `other`, which is used as a default value if other values are not provided. You can also provide `zero`, `one`, `few` and `many` values if you need to have different translations for different plural forms.

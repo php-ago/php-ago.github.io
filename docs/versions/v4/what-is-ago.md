@@ -17,7 +17,7 @@ You might be wondering why you should use this library over others. Here are a f
 - **Battle-Tested**: Trusted and used in numerous production applications.
 - **Easy to Use**: Simple and intuitive API that requires minimal setup that focuses just on what you need.
 
-## Supported languages
+## Supported Languages
 | Flag | Language  | String | Enum       |
 | ---- | --------- | ------ | ---------- |
 | 🇬🇧    | English   | `"en"` | `Lang::EN` |

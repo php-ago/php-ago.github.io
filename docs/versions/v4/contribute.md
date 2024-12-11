@@ -5,66 +5,106 @@ description: Learn how to contribute to Ago library by adding support for a new 
 ---
 
 # Contribute
-If you want to contribute support for a language that is fully supported, all you need to do is to copy/paste 3 files and change them to match the language that you want to add. Then add 1 line to README.md file. Here is my [commit](https://github.com/php-ago/ago/commit/5a7d58569d6cd0af1d7981f3256f59ce19a6ad0e) for supporting Ukrainian language that shows changes that I did. You need to add 3 files for supporting another language. Here are 4 steps that you need to follow.
+If you want to contribute a new language support, you need to follow these simple and easy steps. Let's add a Chinese Mandarin together in this guide.
 
-## How to make a PR
-Before you start working on issue, add a comment to it, so that other folks know that someone is already working on it.
-
-When you make a pull request, make sure that you don't pull it in the master branch. Pull it in the next library version. The name of the library version (Release) matches the name of the branch. You can go to the [branches](https://github.com/php-ago/ago/branches) page, and see what is the latest branch that is not merged, that branch is going to be the next library update.
-
-## 1 Step. Adding translation
-Translation files live in `resources/trans` directory. Here is the example of the language file for Russian language.
+## Step 1. Create a new Constant
+To [`Lang.php`](https://github.com/php-ago/ago/blob/main/src/Lang.php) file add a new constant with [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language code just below the last constant. Don't forget a little comment with the language name.
 
 ```php
-return [
-    'ago' => 'назад',
-    'just_now' => 'Только что',
-    'online' => 'В сети',
-    'second' => 'секунда',
-    'seconds' => 'секунды',
-    'seconds-special' => 'секунд',
-    'minute' => 'минута',
-    'minutes' => 'минуты',
-    'minutes-special' => 'минут',
-    // ... etc ...
-];
+final class Lang
+{
+    public const EN = 'en'; // English
+    public const RU = 'ru'; // Russian
+    public const UK = 'uk'; // Ukrainian
+    public const NL = 'nl'; // Dutch
+    public const DE = 'de'; // German
+    public const ZH = 'zh'; // Chinese // [!code ++]
 ```
 
-Every translation file return array of translations. Note that `'second-special'` key is optional and can be used for languages that have not only singular and plural form for words like **day**, **minute**, etc... but more.
+## Step 2. Update README File
+Update [`README.md`](https://github.com/php-ago/ago/blob/main/README.md) file to let everybody know that we have added support for a new language. Add a new line to the **Supported Languages** section.
 
-## 2 Step. Adding rules
-Rules live in `resources/rules` directory. Here is the example of the rule file for Russian language.
+```md
+## Supported Languages
+| Flag | Language              | ISO 639-1 |
+| ---- | --------------------- | --------- |
+| 🇬🇧   | English               | `en`      |
+| 🇷🇺   | Russian               | `ru`      |
+| 🇺🇦   | Ukrainian             | `uk`      |
+| 🇳🇱   | Dutch                 | `nl`      |
+| 🇩🇪   | German                | `de`      |
+| 🇨🇳   | Chinese Simplified    | `zh`      | // [!code ++]
+```
+
+## Step 3. Add Translations
+Translation files live in the [`/resources/lang/`](https://github.com/php-ago/ago/tree/main/resources/lang) directory of the project. Translation is a simple PHP with translations that are returned as a `LangSet` object.
+
+I'll copy/paste `en.php` file to `zh.php` and change all the values to match Chinese Simplified. Here is the content of the new file:
 
 ```php
-return static function (int $number, int $last_digit): array {
+<?php
+
+declare(strict_types=1);
+
+use Serhii\Ago\Lang;
+use Serhii\Ago\LangForm;
+use Serhii\Ago\LangSet;
+
+return new LangSet(
+    lang: Lang::ZH,
+    format: "{num}{timeUnit}{ago}",
+    ago: "前",
+    online: "在线",
+    justNow: "刚刚",
+    second: new LangForm(other: "秒"),
+    minute: new LangForm(other: "分钟"),
+    hour: new LangForm(other: "小时"),
+    day: new LangForm(other: "天"),
+    week: new LangForm(other: "周"),
+    month: new LangForm(other: "个月"),
+    year: new LangForm(other: "年"),
+);
+```
+
+Since Chinese Simplified doesn't have special forms for words, we can use `other` form for a default value. Also, you see the `format` field value? I don't want any spaces between characters, so I removed them.
+
+For more information about these fields, you can check [What Can Be Overwritten](/v4/configurations.html#what-can-be-overwritten) section.
+
+## Step 4. Add Rules
+Rules live in the [`/resources/rules.php`](https://github.com/php-ago/ago/blob/main/resources/rules.php) file.
+
+```php{22-28}
+/**
+ * @return array<string,Rule>
+ */
+return static function (int $num): array {
+    $end = $num % 10;
+
     return [
-        'single' => [
-            $number === 1,
-            $last_digit === 1 && $number >= 21,
-        ],
-        'plural' => [
-            $number >= 2 && $number < 5,
-            $number >= 22 && $last_digit >= 2 && $last_digit < 5,
-        ],
-        'special' => [
-            $number >= 5 && $number <= 20,
-            $last_digit === 0,
-            $last_digit >= 5 && $last_digit <= 9,
-        ],
+        'en,nl,de' => new Rule(
+            zero: $num === 0,
+            one: $num === 1,
+            two: $num === 2,
+            few: $num > 1,
+            many: $num > 1,
+        ),
+        'ru,uk' => new Rule(
+            zero: $num === 0,
+            one: $num === 1 || ($num > 20 && $end === 1),
+            two: $num === 2,
+            few: ($end === 2 || $end === 3 || $end === 4) && ($num < 10 || $num > 20),
+            many: ($num >= 5 && $num <= 20) || $end === 0 || $end >= 5,
+        ),
+        'zh' => new Rule(
+            zero: $num === 0,
+            one: $num === 1,
+            two: $num === 2,
+            few: true,
+            many: true,
+        ),
     ];
 };
 ```
 
-Every rule file should return a callback function with 2 parameters. The callback returns array of associative array. The array contains rules for 3 forms.
-
-- `single` form for words in a single form, like minute, day, year, etc.
-- `plural` form for words in a plural form, like minutes, days, years, etc.
-- `special` *(optional)* form for special cases, for example in Russian, and Ukrainian we have special forms for words: **недель**, **месяцев**, etc. They are different from single and plural form. So we need to have separate rules for them.
-
-Each form has a boolean rule or array of boolean rules. In Russian example we say that we want to use `single` form when last digit of the number is equal to 1 or number is 0. Now when we see date `1 day ago` in Russian the output will be `1 день назад`, which is the correct translation that we got from `resources/lang/ru.php` file where we have line `'day' => 'день'`. We can give either boolean to each rule or array of booleans when we have many cases for the form. In our example we have 3 cases for `special` form. If one of them will be true, special form will be applied.
-
-## 3 Step. Adding tests
+## Step 5. Adding Tests
 Tests for all translations are live in `tests/Translations` directory. Just copy one of the existing tests and change it whatever you want to match your language. Just make sure you have enough cases to cover specifics of your language. If you don't know about [PHPUnit Data Providers](https://phpunit.de/manual/3.7/en/writing-tests-for-phpunit.html) you might want to read about it.
-
-## 4 Step. Add 1 line to README.md
-After all tests are passing, you need to do last step and add language support to README.md file to **Supported languages** section.
