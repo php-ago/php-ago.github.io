@@ -20,6 +20,7 @@ composer require serhii/ago
 ## Supported PHP Versions
 **Ago** requires a minimum PHP version of `8.2`. Here is the list of supported PHP versions:
 
-- [8.2](https://www.php.net/releases/8.2/en.php)
-- [8.3](https://www.php.net/releases/8.3/en.php)
-- [8.4](https://www.php.net/releases/8.4/en.php)
+- [8.1 (enums, readonly properties)](https://www.php.net/releases/8.1/en.php)
+- [8.2 (readonly classes, intersection types)](https://www.php.net/releases/8.2/en.php)
+- [8.3 (typed class const, override)](https://www.php.net/releases/8.3/en.php)
+- [8.4 (property hooks, asymmetric visibility)](https://www.php.net/releases/8.4/en.php)

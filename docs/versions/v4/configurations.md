@@ -30,6 +30,15 @@ The list of all available configurations that you can change through the `Serhii
 ## Change Language
 Default language is English. Optionally you can change the language in your application by passing one of the values on `Serhii\Ago\Lang` static class, or you can pass a string with the language code like `'ru'`, `'en'`, `'nl'`, etc.
 
+You can do it in two ways, either by using the `TimeAgo::configure` method or by using the `Lang::set` method.
+
+::: code-group
+```php [Lang::set]
+use Serhii\Ago\Lang;
+
+Lang::set(Lang::RU);
+```
+
 ```php [TimeAgo::configure]
 use Serhii\Ago\TimeAgo;
 use Serhii\Ago\Config;
@@ -38,6 +47,11 @@ use Serhii\Ago\Lang;
 $config = new Config(lang: Lang::RU);
 TimeAgo::reconfigure($config);
 ```
+:::
+
+:::warning `Lang::set` only Changes Language
+If you use the `Lang::set` method for changing the language, it will not reset the configuration to the default values. If you want to reset the configuration, you should use the `TimeAgo::reconfigure` method with the default configuration.
+:::
 
 :::tip Supported Languages
 The list of all supported languages you can find in [Supported Languages](/v4/what-is-ago.html#supported-languages) section.

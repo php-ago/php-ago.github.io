@@ -59,7 +59,7 @@ export default defineVersionedConfig(
                     {
                         text: 'Information',
                         items: [
-                            { text: 'Upgrade', link: '/v4/upgrade' },
+                            { text: 'Upgrade Guide', link: '/v4/upgrade' },
                             { text: 'What is Ago?', link: '/v4/what-is-ago' },
                             { text: 'Contribute', link: '/v4/contribute' },
                         ],
