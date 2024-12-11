@@ -5,7 +5,7 @@ description: Learn how to contribute to Ago library by adding support for a new 
 ---
 
 # Contribute
-If you want to contribute a new language support, you need to follow these simple and easy steps. Let's add a Chinese Mandarin together in this guide.
+If you want to contribute a new language support, you need to follow these simple and easy steps. Let's add a Chinese Mandarin together in this guide. As a bonus, here is the [GitHub Commit](https://github.com/php-ago/ago/commit/46d43aff6b5c1c15d287a44dc80a1a594703407f) that adds Chinese Simplified language support.
 
 ## Step 1. Constant
 To [`Lang.php`](https://github.com/php-ago/ago/blob/main/src/Lang.php) file add a new constant with [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language code just below the last constant. Don't forget a little comment with the language name.
