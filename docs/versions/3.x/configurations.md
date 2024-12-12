@@ -1,7 +1,7 @@
 ---
 outline: deep
 search: false
-title: Configurations - 4.x
+title: Configurations - 3.x
 ---
 
 # Configurations
