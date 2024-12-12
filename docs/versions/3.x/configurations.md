@@ -7,7 +7,7 @@ title: Configurations - 3.x
 # Configurations
 
 :::danger Outdated version
-You are viewing the outdated version of Ago library. [Switch to the latest version](/) to get all the new features and improvements
+You are currently viewing an outdated version of the Ago library. [Switch to the latest version](/) to access the newest features, improvements, and updates.
 :::
 
 ## Set language
