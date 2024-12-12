@@ -24,11 +24,11 @@ export default defineVersionedConfig(
 
         themeConfig: {
             versionSwitcher: false,
+
             footer: {
                 message:
                     'Released under the <a href="https://github.com/php-ago/ago/blob/main/LICENSE" target="_blank">MIT License</a>',
-                copyright:
-                    'Copyright © 2019 - present <a href="https://serhii.io/about-me" target="_blank">Serhii Chornenkyi (Serhii Cho)</a>',
+                copyright: `Copyright © 2019 - ${new Date().getFullYear()} <a href="https://serhii.io/about-me" target="_blank">Serhii Cho</a>`,
             },
 
             sidebar: {
