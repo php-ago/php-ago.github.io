@@ -11,7 +11,7 @@ description: Learn how to upgrade Ago library from 3.x to 4.x
 The process should take approximately 5 to 10 minutes, depending on the complexity of your application and the extent of your configurations.
 
 :::tip Optional Steps
-Some steps are marked with <Badge type="warning" text="optional" />, as they may not apply to you if you’re not using the specific configurations or features mentioned.
+Some steps are marked with <Badge type="warning" text="optional" />, as they may not apply to you if you're not using the specific configurations or features mentioned.
 :::
 
 ## Step 1: Update `composer.json`
