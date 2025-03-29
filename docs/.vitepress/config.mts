@@ -27,7 +27,7 @@ export default defineVersionedConfig(
 
             footer: {
                 message:
-                    'Released under the <a href="https://github.com/php-ago/ago/blob/main/LICENSE" target="_blank">MIT License</a>',
+                    'Released under the <a href="https://github.com/php-ago/ago/blob/master/LICENSE" target="_blank">MIT License</a>',
                 copyright: `Copyright © 2019 - ${new Date().getFullYear()} <a href="https://serhii.io/about-me" target="_blank">Serhii Cho</a>`,
             },
 
@@ -85,7 +85,7 @@ export default defineVersionedConfig(
                 },
                 {
                     text: 'Release Notes',
-                    link: 'https://github.com/php-ago/ago/blob/main/CHANGELOG.md',
+                    link: 'https://github.com/php-ago/ago/blob/master/CHANGELOG.md',
                 },
             ],
 

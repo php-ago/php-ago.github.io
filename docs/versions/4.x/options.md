@@ -29,7 +29,7 @@ echo TimeAgo::trans(time(), Option::JUST_NOW); // "Just now"
 ```
 
 ## Available options
-All options are available in [Serhii\Ago\Option](https://github.com/php-ago/ago/blob/main/src/Option.php) enum.
+All options are available in [Serhii\Ago\Option](https://github.com/php-ago/ago/blob/master/src/Option.php) enum.
 
 | Option    | Description |
 | --------- | ----------- |
