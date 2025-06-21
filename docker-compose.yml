@@ -1,0 +1,13 @@
+name: ago-docs
+
+services:
+    app:
+        image: ago-docs
+        container_name: ago-docs
+        build:
+            context: .
+        volumes:
+            - .:/app
+            - /app/node_modules
+        ports:
+            - 3000:5173
