@@ -5,15 +5,15 @@
     "author": "SerhiiCho <serhiicho@protonmail.com>",
     "license": "MIT",
     "scripts": {
-        "dev": "vitepress dev docs",
+        "dev": "vitepress dev docs --host",
         "build": "vitepress build docs",
         "preview": "yarn build && vitepress preview docs",
         "deploy": "yarn build && gh-pages -d docs/.vitepress/dist"
     },
     "devDependencies": {
         "gh-pages": "^6.2.0",
-        "vitepress": "^1.5.0",
-        "vitepress-versioning-plugin": "^1.2.1"
+        "vitepress": "^1.6.3",
+        "vitepress-versioning-plugin": "1.3.0"
     },
     "contributors": [
         {
