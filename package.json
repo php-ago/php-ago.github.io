@@ -1,7 +1,7 @@
 {
     "name": "ago",
     "main": "docs/.vitepress/index.js",
-    "repository": "https://github.com/php-ago/php-ago.github.io",
+    "repository": "https://php-ago.codeberg.page/",
     "author": "SerhiiCho <serhiicho@protonmail.com>",
     "license": "MIT",
     "scripts": {

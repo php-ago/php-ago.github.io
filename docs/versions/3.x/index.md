@@ -11,7 +11,7 @@ You are currently viewing an outdated version of the Ago library. [Switch to the
 # Get Started
 Date/time converter into "n time ago" format that supports multiple languages. You can [contribute](/3.x/contribute) any language that you wish easily by creating a pull request. I would gladly merge it in if you follow the simple steps.
 
-This library is well tested, optimized and already used in many production apps. It has shown itself pretty well. If you find any issues or bugs 🐞, please create an [issue](https://github.com/php-ago/ago/issues/new), and I'll fix it as soon as I can.
+This library is well tested, optimized and already used in many production apps. It has shown itself pretty well. If you find any issues or bugs 🐞, please create an [issue](https://codeberg.org/php-ago/ago/issues/new), and I'll fix it as soon as I can.
 
 
 ## Quick Start

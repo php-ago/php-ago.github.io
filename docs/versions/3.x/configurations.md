@@ -33,5 +33,5 @@ Lang::set('en', [
 ```
 
 :::tip
-The list of all default key values you can find in [resources/lang](https://github.com/php-ago/ago/tree/master/resources/lang) directory.
+The list of all default key values you can find in [resources/lang](https://codeberg.org/php-ago/ago/src/branch/master/resources/lang) directory.
 :::
