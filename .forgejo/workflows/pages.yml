@@ -1,9 +1,8 @@
 name: Build and Deploy
+enable-email-notifications: true
 
 on:
   push:
-    branches: [master]
-  pull_request:
     branches: [master]
 
 jobs:
@@ -13,21 +12,18 @@ jobs:
     name: Build and deploy
 
     steps:
-      - name: Install deps 🛎️
-        run: |
-          apt-get update
-          apt-get install -y rsync
+      - name: Install deps ⬇️
+        run: apt update && apt install -y rsync
 
       - name: Checkout 🛎️
         uses: actions/checkout@v4
 
-      - name: Install and Build 🔧
-        run: |
-          npm ci
-          npm run build
-
-      - name: Deploy 🚀
-        uses: https://github.com/JamesIves/github-pages-deploy-action@v4
+      - name: Deploy Vite App 🚀
+        uses: https://codeberg.org/act/deploy-vite@v1
         with:
-          folder: docs/.vitepress/dist
-          branch: pages
+          host-user: ${{ secrets.HOST_USER }}
+          host-ip: ${{ secrets.HOST_IP }}
+          host-key: ${{ secrets.HOST_PRIVATE_SSH_KEY }}
+          from: docs/.vitepress/dist/
+          to: ~/pages/php-ago
+          to-pages-branch: true
