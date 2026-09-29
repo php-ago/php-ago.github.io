@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://php-ago.github.io/sitemap.xml
+Disallow: /3.x/
+Sitemap: https://php-ago.serhiicho.com/sitemap.xml
