@@ -1,4 +1,4 @@
-# Documentation website for [ago](https://php-ago.codeberg.page/) library
+# Documentation website for [ago](https://php-ago.serhiicho.com/) library
 
 ## Contribute
 

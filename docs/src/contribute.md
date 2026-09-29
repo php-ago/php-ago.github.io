@@ -125,7 +125,7 @@ Let everybody know that you have added support for a new language. Update [`CHAN
 - 🇨🇳 Add Chinese Simplified language support
 
 ## 4.0.0 (2024-12-11)
-> 🚀 [Upgrade Guide from 3.x to 4.x](https://php-ago.codeberg.page/upgrade)
+> 🚀 [Upgrade Guide from 3.x to 4.x](https://php-ago.serhiicho.com/upgrade)
 ```
 
 ## Step 7. Checks
