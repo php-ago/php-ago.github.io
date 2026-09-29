@@ -16,7 +16,7 @@ The `TimeAgo::configure` method lets you update specific settings without alteri
 Use the `TimeAgo::reconfigure` method to **completely replace the current configuration**. This function resets all settings to their default values before applying the new configuration, ensuring a clean slate for your updates.
 
 :::tip Reset Configuration Option
-You also have a `Serhii\Ago\Option::RESET_CONF` option to reset the configuration before getting the processed date output. This is useful when you want to have a clean slate for the output. Read about it in the [Options](/4.x/options) section.
+You also have a `Serhii\Ago\Option::RESET_CONF` option to reset the configuration before getting the processed date output. This is useful when you want to have a clean slate for the output. Read about it in the [Options](/options) section.
 :::
 
 ## Available Configurations
@@ -24,7 +24,7 @@ The list of all available configurations that you can change through the `Serhii
 
 | Parameter | Type | Default | Description |
 | --- | --- | --- | --- |
-| [lang](#change-language) | `string` | `Lang::EN` | [Language code](/4.x/what-is-ago.html#supported-languages) of the output following the [ISO 639-1 Standard](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) |
+| [lang](#change-language) | `string` | `Lang::EN` | [Language code](/what-is-ago.html#supported-languages) of the output following the [ISO 639-1 Standard](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) |
 | [overwrites](#overwrite-translations) | `LangOverwrite[]` | `[]` | Custom translations for the language |
 
 ## Change Language
@@ -54,7 +54,7 @@ If you use the `Lang::set` method for changing the language, it will not reset t
 :::
 
 :::tip Supported Languages
-The list of all supported languages you can find in [Supported Languages](/4.x/what-is-ago.html#supported-languages) section.
+The list of all supported languages you can find in [Supported Languages](/what-is-ago.html#supported-languages) section.
 :::
 
 ## Overwrite Translations

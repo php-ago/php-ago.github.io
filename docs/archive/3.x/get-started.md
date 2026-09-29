@@ -4,10 +4,6 @@ search: false
 title: Get Started - 3.x
 ---
 
-:::danger Outdated version
-You are currently viewing an outdated version of the Ago library. [Switch to the latest version](/) to access the newest features, improvements, and updates.
-:::
-
 # Get Started
 Date/time converter into "n time ago" format that supports multiple languages. You can [contribute](/3.x/contribute) any language that you wish easily by creating a pull request. I would gladly merge it in if you follow the simple steps.
 

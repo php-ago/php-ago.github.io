@@ -6,10 +6,6 @@ title: Configurations - 3.x
 
 # Configurations
 
-:::danger Outdated version
-You are currently viewing an outdated version of the Ago library. [Switch to the latest version](/) to access the newest features, improvements, and updates.
-:::
-
 ## Set language
 Default language is English. Optionally you can set the language in your application by calling `set()` method and passing a flag `ru` for Russian or `en` for English language. You can see supported languages in the next section.
 

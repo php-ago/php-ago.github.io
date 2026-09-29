@@ -68,7 +68,7 @@ return new LangSet( // [!code focus:14]
 
 Since Chinese Simplified doesn't have special forms for words, we can use `other` form for a default value. Also, you see the `format` field value? I don't want any spaces between characters, so I removed them.
 
-For more information about these fields, you can check [What Can Be Overwritten](/4.x/configurations.html#what-can-be-overwritten) section.
+For more information about these fields, you can check [What Can Be Overwritten](/configurations.html#what-can-be-overwritten) section.
 
 ## Step 4. Rules
 Rules live in the [`/resources/rules.php`](https://codeberg.org/php-ago/ago/src/branch/master/resources/rules.php) file. As you can see down below, rule argument names match the language form names that you defined in the translation file.
@@ -125,7 +125,7 @@ Let everybody know that you have added support for a new language. Update [`CHAN
 - 🇨🇳 Add Chinese Simplified language support
 
 ## 4.0.0 (2024-12-11)
-> 🚀 [Upgrade Guide from 3.x to 4.x](https://php-ago.codeberg.page/4.x/upgrade)
+> 🚀 [Upgrade Guide from 3.x to 4.x](https://php-ago.codeberg.page/upgrade)
 ```
 
 ## Step 7. Checks

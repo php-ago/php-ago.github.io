@@ -4,10 +4,6 @@ search: false
 title: Options - 3.x
 ---
 
-:::danger Outdated version
-You are currently viewing an outdated version of the Ago library. [Switch to the latest version](/) to access the newest features, improvements, and updates.
-:::
-
 # Options
 As the seconds argument `trans` method excepts array of options or single option. Here is an example of passed options.
 

@@ -1,22 +1,23 @@
 {
     "name": "ago",
     "main": "docs/.vitepress/index.js",
-    "repository": "https://php-ago.codeberg.page/",
+    "repository": "https://codeberg.org/php-ago/pages",
     "author": "SerhiiCho <serhiicho@protonmail.com>",
     "license": "MIT",
+    "contributors": [
+        {
+            "name": "SerhiiCho",
+            "email": "serhiicho@protonmail.com"
+        }
+    ],
     "scripts": {
         "dev": "vitepress dev docs --host",
         "build": "vitepress build docs",
         "preview": "yarn build && vitepress preview docs"
     },
     "devDependencies": {
-        "vitepress": "^1.6.3",
-        "vitepress-versioning-plugin": "1.3.0"
-    },
-    "contributors": [
-        {
-            "name": "SerhiiCho",
-            "email": "serhiicho@protonmail.com"
-        }
-    ]
+        "@types/node": "^26.6.3",
+        "@viteplus/versions": "^2.0.8",
+        "vitepress": "^1.6.4"
+    }
 }

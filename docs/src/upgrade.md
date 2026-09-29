@@ -159,4 +159,4 @@ Lang::set('en', [
 ```
 :::
 
-For the full tutorial on how to use the new structure, check the [Overwrite Translations](/4.x/configurations.html#overwrite-translations) section. You can see there how to use the new API and how to make your translations more accurate.
+For the full tutorial on how to use the new structure, check the [Overwrite Translations](/configurations.html#overwrite-translations) section. You can see there how to use the new API and how to make your translations more accurate.

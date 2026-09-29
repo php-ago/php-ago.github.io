@@ -4,10 +4,6 @@ search: false
 title: Contribute - 3.x
 ---
 
-:::danger Outdated version
-You are currently viewing an outdated version of the Ago library. [Switch to the latest version](/) to access the newest features, improvements, and updates.
-:::
-
 # Contribute
 If you want to contribute support for a language that is fully supported, all you need to do is to copy/paste 3 files and change them to match the language that you want to add. Then add 1 line to README.md file. Here is my [commit](https://codeberg.org/php-ago/ago/commit/5a7d58569d6cd0af1d7981f3256f59ce19a6ad0e) for supporting Ukrainian language that shows changes that I did. You need to add 3 files for supporting another language. Here are 4 steps that you need to follow.
 

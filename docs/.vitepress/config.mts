@@ -1,33 +1,50 @@
-import defineVersionedConfig from 'vitepress-versioning-plugin'
+import type { HeadConfig, TransformContext } from 'vitepress'
+import { defineVersionedConfig } from '@viteplus/versions'
+import { versions, latestVersion, outdatedVersions } from './theme/versions'
+import { resolve } from 'node:path'
+
+const hostname = 'https://php-ago.serhiicho.com'
+
+function setCanonicalTag(page: string): string {
+    page = page.replace('.md', '.html')
+    return page == 'index.html' ? hostname : `${hostname}/${page}`
+}
 
 export default defineVersionedConfig(
     {
         lang: 'en-US',
         title: 'Ago',
-        description:
-            'Date/time converter into "n time ago" format that supports multiple languages',
+        description: 'Date/time converter into "n time ago" format that supports multiple languages',
 
-        versioning: {
-            latestVersion: '4.x',
+        transformHead: (ctx: TransformContext) => {
+            const head: HeadConfig[] = []
+            head.push(['link', { rel: 'canonical', href: setCanonicalTag(ctx.page) }])
+            return head
         },
 
         lastUpdated: true,
 
-        sitemap: {
-            hostname: 'https://php-ago.codeberg.org',
-
-            // exclude old version pages from sitemap
-            transformItems: items => {
-                return items.filter(item => !item.url.startsWith('3.x/'))
+        vite: {
+            resolve: {
+                alias: {
+                    '@': resolve(import.meta.dirname, './theme'),
+                },
             },
         },
 
-        themeConfig: {
-            versionSwitcher: false,
+        sitemap: {
+            hostname,
+            // exclude old version pages from sitemap
+            transformItems: items => items.filter(item => !outdatedVersions.some(p => item.url.startsWith(p))),
+        },
 
+        versionsConfig: {
+            versionSwitcher: false,
+        },
+
+        themeConfig: {
             footer: {
-                message:
-                    'Released under the <a href="https://codeberg.org/php-ago/ago/src/branch/master/LICENSE" target="_blank">MIT License</a>',
+                message: 'Released under the <a href="https://codeberg.org/php-ago/ago/src/branch/master/LICENSE" target="_blank">MIT License</a>',
                 copyright: `Copyright © 2019 - ${new Date().getFullYear()} <a href="https://serhiicho.com/about-me" target="_blank">Serhii Cho</a>`,
             },
 
@@ -36,32 +53,32 @@ export default defineVersionedConfig(
                     {
                         text: 'Guide',
                         items: [
-                            { text: 'Get Started', link: '/3.x/' },
-                            { text: 'Configurations', link: '/3.x/configurations' },
-                            { text: 'Options', link: '/3.x/options' },
+                            { text: 'Get Started', link: '/get-started' },
+                            { text: 'Configurations', link: '/configurations' },
+                            { text: 'Options', link: '/options' },
                         ],
                     },
                     {
                         text: 'Information',
-                        items: [{ text: 'Contribute', link: '/3.x/contribute' }],
+                        items: [{ text: 'Contribute', link: '/contribute' }],
                     },
                 ],
-                '/4.x/': [
+                '/': [
                     {
                         text: 'Guide',
                         items: [
-                            { text: 'Get Started', link: '/4.x/' },
-                            { text: 'Usage Guide', link: '/4.x/usage-guide' },
-                            { text: 'Configurations', link: '/4.x/configurations' },
-                            { text: 'Options', link: '/4.x/options' },
+                            { text: 'Get Started', link: '/get-started' },
+                            { text: 'Usage Guide', link: '/usage-guide' },
+                            { text: 'Configurations', link: '/configurations' },
+                            { text: 'Options', link: '/options' },
                         ],
                     },
                     {
                         text: 'Information',
                         items: [
-                            { text: 'Upgrade Guide', link: '/4.x/upgrade' },
-                            { text: 'What is Ago?', link: '/4.x/what-is-ago' },
-                            { text: 'Contribute', link: '/4.x/contribute' },
+                            { text: 'Upgrade Guide', link: '/upgrade' },
+                            { text: 'What is Ago?', link: '/what-is-ago' },
+                            { text: 'Contribute', link: '/contribute' },
                         ],
                     },
                 ],
@@ -71,25 +88,29 @@ export default defineVersionedConfig(
                 provider: 'local',
             },
 
-            nav: [
-                {
-                    component: 'VersionSwitcher',
-                    props: {
-                        versions: ['4.x', '3.x'],
-                        latestVersion: '4.x',
+            nav: {
+                root: [
+                    {
+                        component: 'VersionSwitcher',
+                        props: { versions, latestVersion },
                     },
-                },
-                {
-                    text: 'Documentation',
-                    link: '/4.x/',
-                },
-                {
-                    text: 'Release Notes',
-                    link: 'https://codeberg.org/php-ago/ago/src/branch/master/CHANGELOG.md',
-                },
-            ],
+                    {
+                        text: 'Documentation',
+                        link: '/get-started',
+                    },
+                    {
+                        text: 'Release Notes',
+                        link: 'https://codeberg.org/php-ago/ago/src/branch/master/CHANGELOG.md',
+                    },
+                ],
+            },
 
             socialLinks: [
+                {
+                    icon: 'packagist',
+                    ariaLabel: 'Packagist',
+                    link: 'https://packagist.org/packages/serhii/ago',
+                },
                 {
                     icon: 'codeberg',
                     ariaLabel: 'Codeberg',
@@ -98,6 +119,4 @@ export default defineVersionedConfig(
             ],
         },
     },
-    // @ts-ignore
-    __dirname,
 )
