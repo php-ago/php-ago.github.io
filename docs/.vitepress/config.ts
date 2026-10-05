@@ -95,7 +95,7 @@ export default defineVersionedConfig(
                 root: [
                     { component: 'VersionSwitcher' },
                     {
-                        text: 'Documentation',
+                        text: 'Docs',
                         link: '/get-started',
                     },
                     {
