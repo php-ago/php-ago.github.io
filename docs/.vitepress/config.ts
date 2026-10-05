@@ -23,6 +23,7 @@ export default defineVersionedConfig(
         },
 
         lastUpdated: true,
+        cleanUrls: true,
 
         vite: {
             resolve: {
@@ -37,8 +38,6 @@ export default defineVersionedConfig(
             // exclude old version pages from sitemap
             transformItems: items => items.filter(item => !outdatedVersions.some(p => item.url.startsWith(p))),
         },
-
-        cleanUrls: true,
 
         versionsConfig: {
             current: latestVersion,
