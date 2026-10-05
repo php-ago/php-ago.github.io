@@ -1,6 +1,6 @@
 import type { HeadConfig, TransformContext } from 'vitepress'
 import { defineVersionedConfig } from '@viteplus/versions'
-import { versions, latestVersion, outdatedVersions } from './theme/versions'
+import { latestVersion, outdatedVersions } from './theme/versions.ts'
 import { resolve } from 'node:path'
 
 const hostname = 'https://php-ago.serhiicho.com'
@@ -38,7 +38,10 @@ export default defineVersionedConfig(
             transformItems: items => items.filter(item => !outdatedVersions.some(p => item.url.startsWith(p))),
         },
 
+        cleanUrls: true,
+
         versionsConfig: {
+            current: latestVersion,
             versionSwitcher: false,
         },
 
@@ -49,21 +52,7 @@ export default defineVersionedConfig(
             },
 
             sidebar: {
-                '/3.x/': [
-                    {
-                        text: 'Guide',
-                        items: [
-                            { text: 'Get Started', link: '/get-started' },
-                            { text: 'Configurations', link: '/configurations' },
-                            { text: 'Options', link: '/options' },
-                        ],
-                    },
-                    {
-                        text: 'Information',
-                        items: [{ text: 'Contribute', link: '/contribute' }],
-                    },
-                ],
-                '/': [
+                root: [
                     {
                         text: 'Guide',
                         items: [
@@ -82,6 +71,20 @@ export default defineVersionedConfig(
                         ],
                     },
                 ],
+                '3.x': [
+                    {
+                        text: 'Guide',
+                        items: [
+                            { text: 'Get Started', link: '/get-started' },
+                            { text: 'Configurations', link: '/configurations' },
+                            { text: 'Options', link: '/options' },
+                        ],
+                    },
+                    {
+                        text: 'Information',
+                        items: [{ text: 'Contribute', link: '/contribute' }],
+                    },
+                ],
             },
 
             search: {
@@ -90,10 +93,7 @@ export default defineVersionedConfig(
 
             nav: {
                 root: [
-                    {
-                        component: 'VersionSwitcher',
-                        props: { versions, latestVersion },
-                    },
+                    { component: 'VersionSwitcher' },
                     {
                         text: 'Documentation',
                         link: '/get-started',

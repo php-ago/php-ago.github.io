@@ -1,6 +1,7 @@
 {
     "name": "ago",
     "main": "docs/.vitepress/index.js",
+    "type": "module",
     "repository": "https://codeberg.org/php-ago/pages",
     "author": "SerhiiCho <serhiicho@protonmail.com>",
     "license": "MIT",
@@ -17,7 +18,8 @@
     },
     "devDependencies": {
         "@types/node": "^26.6.3",
-        "@viteplus/versions": "^2.0.8",
-        "vitepress": "^1.6.4"
+        "@viteplus/versions": "^2.2.0",
+        "typescript": "^7.0.2",
+        "vitepress": "^2.0.0-alpha.20"
     }
 }
