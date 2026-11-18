@@ -27,4 +27,4 @@ jobs:
                 host-key: ${{ secrets.HOST_PRIVATE_SSH_KEY }}
                 from: docs/.vitepress/dist/
                 to: ~/pages/php-ago
-                pages-branch: "php-ago.github.io"
+                pages-branch: php-ago.github.io

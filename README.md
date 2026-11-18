@@ -1,5 +1,7 @@
 # Documentation website for [ago](https://php-ago.serhiicho.com/) library
 
+[![Build and Deploy](https://github.com/php-ago/php-ago.github.io/actions/workflows/gh-pages.yml/badge.svg)](https://github.com/php-ago/php-ago.github.io/actions/workflows/gh-pages.yml)
+
 ## Contribute
 
 ### NPM Commands
