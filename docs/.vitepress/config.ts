@@ -46,7 +46,7 @@ export default defineVersionedConfig(
 
         themeConfig: {
             footer: {
-                message: 'Released under the <a href="https://codeberg.org/php-ago/ago/src/branch/master/LICENSE" target="_blank">MIT License</a>',
+                message: 'Released under the <a href="https://github.com/php-ago/ago/blob/master/LICENSE" target="_blank">MIT License</a>',
                 copyright: `Copyright © 2019 - ${new Date().getFullYear()} <a href="https://serhiicho.com/about-me" target="_blank">Serhii Cho</a>`,
             },
 
@@ -99,7 +99,7 @@ export default defineVersionedConfig(
                     },
                     {
                         text: 'Release Notes',
-                        link: 'https://codeberg.org/php-ago/ago/src/branch/master/CHANGELOG.md',
+                        link: 'https://github.com/php-ago/ago/blob/master/CHANGELOG.md',
                     },
                 ],
             },
@@ -111,9 +111,9 @@ export default defineVersionedConfig(
                     link: 'https://packagist.org/packages/serhii/ago',
                 },
                 {
-                    icon: 'codeberg',
-                    ariaLabel: 'Codeberg',
-                    link: 'https://codeberg.org/php-ago/ago',
+                    icon: 'github',
+                    ariaLabel: 'GitHub',
+                    link: 'https://github.com/php-ago/ago',
                 },
             ],
         },
